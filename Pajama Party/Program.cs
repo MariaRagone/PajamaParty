@@ -160,6 +160,7 @@
 
 
 
+using Pajama_Party;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
@@ -245,86 +246,123 @@ foreach (double p in prices)
 Console.WriteLine(largest); //prints 6 because we changed the 4 to a 6
 Console.WriteLine(prices.Max());
 
-//STUDENT DATABASE
-string[] names = { "Maria", "Rayma", "Fred" };
-string[] hometowns = { "Detroit", "Tampa", "Atlanta" };
-string[] favoriteFoods = { "Pizza", "Burgers", "Ice Cream" };
-bool runProgram = true;
-Console.WriteLine("Welcome to the Student Database");
-while (runProgram)
-{
-    int menuChoice = DisplayMenu(names);
-    Console.WriteLine(menuChoice);
+//STUDENT DATABASE---------------------------------------------------------------------
+//string[] names = { "Maria", "Rayma", "Fred" };
+//string[] hometowns = { "Detroit", "Tampa", "Atlanta" };
+//string[] favoriteFoods = { "Pizza", "Burgers", "Ice Cream" };
+//bool runProgram = true;
+//Console.WriteLine("Welcome to the Student Database");
+//while (runProgram)
+//{
+//    int menuChoice = DisplayMenu(names);
+//    Console.WriteLine(menuChoice);
 
-    CategoryChoice(names, hometowns, favoriteFoods, menuChoice);
-    bool another = AnotherStudent();
-    if (another == false)
-    { 
-        break;
-    }
-}
+//    CategoryChoice(names, hometowns, favoriteFoods, menuChoice);
+//    bool another = AnotherStudent();
+//    if (another == false)
+//    { 
+//        break;
+//    }
+//}
 
-//METHODS
-static int DisplayMenu(string[] names)
+////METHODS
+//static int DisplayMenu(string[] names)
+//{
+//    Console.WriteLine("Choose a student to view:");
+//    for (int i = 0; i < names.Length; i++)
+//    {
+//        var index = Array.IndexOf(names, names[i]);
+//        index++;
+//        Console.WriteLine($"{index}. {names[i]}");//prints 1. Maria ...
+//    }
+//    int menuChoice = int.Parse(Console.ReadLine());
+//    return menuChoice;
+//}
+
+//static string CategoryChoice(string[] names, string[] hometowns, string[] favoriteFoods, int menuChoice)
+//{
+//    bool validChoice = true;
+//    string categoryChoice = "";
+//    while (validChoice)
+//    {
+
+//        Console.WriteLine("Which category would you like to see?");
+//        Console.WriteLine("Hometown or Favorite Food?");
+//        //LOGIC FOR CATEGORY CHOICE
+//        categoryChoice = Console.ReadLine().ToLower().Trim();
+//        if (categoryChoice == "hometown" || categoryChoice == "h" || categoryChoice == "home" || categoryChoice == "town")
+//        {
+//            //display the respective hometown
+//            Console.WriteLine($"{names[menuChoice - 1]} is from {hometowns[menuChoice - 1]}.");
+//            break;
+//        }
+//        else if (categoryChoice == "favorite food" || categoryChoice == "f" || categoryChoice == "food" || categoryChoice == "fave")
+//        {
+//            Console.WriteLine($"{names[menuChoice - 1]} loves {favoriteFoods[menuChoice - 1]}.");
+//            break;
+//        }
+//        else
+//        {
+//            Console.WriteLine("That was not a valid response. Please try again");
+//            continue;
+//        }
+//    }
+//    return categoryChoice;
+//}
+
+//static bool AnotherStudent()
+//{
+//    Console.WriteLine("Would you like to see another student? y/n");
+//    string another = Console.ReadLine().ToLower().Trim();
+//    if (another == "y" || another == "yes")
+//    {
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+//REWRITE THE STUDENT DATABASE USING THE STUDENTS CLASS
+
+//a list of students
+List<Students> studentList = new List<Students>()
 {
-    Console.WriteLine("Choose a student to view:");
-    for (int i = 0; i < names.Length; i++)
+    new Students ("Sam", "Waterford", "Burgers"),
+    new Students("Liz", "NY", "Hot Dogs"),
+    new Students("Frank", "Miami", "Vodka")
+};
+
+//An array of students
+Students [] studentArray = new Students[12];
+studentArray[0] = new Students("Jack", "LA", "Sandwiches");
+Students Maria = new Students("Maria", "Detroit", "Pasta");
+//put Maria into the 2nd place: index 1
+studentArray[1] = Maria;
+studentArray[2] = new Students("Pam", "Kansas City", "Peaches");
+
+bool viewStudents = true;
+while (viewStudents)
+{
+    Console.WriteLine("Choose a student");
+    //display the menu to choose a student
+    for (int i = 0; i < studentList.Count; i++)
     {
-        var index = Array.IndexOf(names, names[i]);
+        //Console.WriteLine($"{studentList}");
+
+    }
+    for (int i = 0; i < studentArray.Length; i++)
+    {
+        var index = Array.IndexOf(studentArray, studentArray[i]);
         index++;
-        Console.WriteLine($"{index}. {names[i]}");//prints 1. Maria ...
+        Console.WriteLine($"{index}. {studentArray[i]}");//prints 1. Jack ...
+
     }
-    int menuChoice = int.Parse(Console.ReadLine());
-    return menuChoice;
+    break;
 }
-
-static string CategoryChoice(string[] names, string[] hometowns, string[] favoriteFoods, int menuChoice)
-{
-    bool validChoice = true;
-    string categoryChoice = "";
-    while (validChoice)
-    {
-
-        Console.WriteLine("Which category would you like to see?");
-        Console.WriteLine("Hometown or Favorite Food?");
-        //LOGIC FOR CATEGORY CHOICE
-        categoryChoice = Console.ReadLine().ToLower().Trim();
-        if (categoryChoice == "hometown" || categoryChoice == "h" || categoryChoice == "home" || categoryChoice == "town")
-        {
-            //display the respective hometown
-            Console.WriteLine($"{names[menuChoice - 1]} is from {hometowns[menuChoice - 1]}.");
-            break;
-        }
-        else if (categoryChoice == "favorite food" || categoryChoice == "f" || categoryChoice == "food" || categoryChoice == "fave")
-        {
-            Console.WriteLine($"{names[menuChoice - 1]} loves {favoriteFoods[menuChoice - 1]}.");
-            break;
-        }
-        else
-        {
-            Console.WriteLine("That was not a valid response. Please try again");
-            continue;
-        }
-    }
-    return categoryChoice;
-}
-
-static bool AnotherStudent()
-{
-    Console.WriteLine("Would you like to see another student? y/n");
-    string another = Console.ReadLine().ToLower().Trim();
-    if (another == "y" || another == "yes")
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-
-
 
 
 
