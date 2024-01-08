@@ -329,40 +329,115 @@ Console.WriteLine(prices.Max());
 //REWRITE THE STUDENT DATABASE USING THE STUDENTS CLASS
 
 //a list of students
-List<Students> studentList = new List<Students>()
+//List<Students> studentList = new List<Students>()
+//{
+//    new Students ("Sam", "Waterford", "Burgers"),
+//    new Students("Liz", "NY", "Hot Dogs"),
+//    new Students("Frank", "Miami", "Vodka")
+//};
+
+////An array of students
+//Students [] studentArray = new Students[12];
+//studentArray[0] = new Students("Jack", "LA", "Sandwiches");
+//Students Maria = new Students("Maria", "Detroit", "Pasta");
+////put Maria into the 2nd place: index 1
+//studentArray[1] = Maria;
+//studentArray[2] = new Students("Pam", "Kansas City", "Peaches");
+
+//bool viewStudents = true;
+//while (viewStudents)
+//{
+//    Console.WriteLine("Choose a student");
+//    //display the menu to choose a student
+//    for (int i = 0; i < studentList.Count; i++)
+//    {
+//        //Console.WriteLine($"{studentList}");
+
+//    }
+//    for (int i = 0; i < studentArray.Length; i++)
+//    {
+//        var index = Array.IndexOf(studentArray, studentArray[i]);
+//        index++;
+//        Console.WriteLine($"{index}. {studentArray[i]}");//prints 1. Jack ...
+
+//    }
+//    break;
+//}
+
+//---------------------------------------------------------------------------------------------------------------------
+//You are playing the following Nim Game with your friend:
+
+//Initially, there is a heap of stones on the table.
+//You and your friend will alternate taking turns, and you go first.
+//On each turn, the person whose turn it is will remove 1 to 3 stones from the heap.
+//The one who removes the last stone is the winner.
+//Given n, the number of stones in the heap, return true if you can win the game assuming both you and your friend play optimally, otherwise return false.
+
+//Example 1:
+
+//Input: n = 4
+//Output: false
+//Explanation: These are the possible outcomes:
+//1.You remove 1 stone. Your friend removes 3 stones, including the last stone. Your friend wins.
+//2. You remove 2 stones. Your friend removes 2 stones, including the last stone. Your friend wins.
+//3. You remove 3 stones. Your friend removes the last stone. Your friend wins.
+//In all outcomes, your friend wins.
+//Example 2:
+
+//Input: n = 1
+//Output: true
+//Example 3:
+
+//Input: n = 2
+//Output: true
+
+
+
+//Constraints:
+
+//1 <= n <= 231 - 1
+
+Random random = new Random();
+int n = random.Next(1, 15);
+CanWinNim(n);
+static int CanWinNim(int n)
 {
-    new Students ("Sam", "Waterford", "Burgers"),
-    new Students("Liz", "NY", "Hot Dogs"),
-    new Students("Frank", "Miami", "Vodka")
-};
-
-//An array of students
-Students [] studentArray = new Students[12];
-studentArray[0] = new Students("Jack", "LA", "Sandwiches");
-Students Maria = new Students("Maria", "Detroit", "Pasta");
-//put Maria into the 2nd place: index 1
-studentArray[1] = Maria;
-studentArray[2] = new Students("Pam", "Kansas City", "Peaches");
-
-bool viewStudents = true;
-while (viewStudents)
-{
-    Console.WriteLine("Choose a student");
-    //display the menu to choose a student
-    for (int i = 0; i < studentList.Count; i++)
+    while (n >= 1 && n <= Math.Pow(2, 32) - 1)
     {
-        //Console.WriteLine($"{studentList}");
+        bool turn = true;
+        while (turn)
+        {
+            //logic for playing
+            Console.WriteLine($"Next person: There are {n} stones left. How many do you want to remove?");
+            int removed = int.Parse(Console.ReadLine());
+            if (removed < 1 || removed > 3)
+            {
+                Console.WriteLine("Please choose 1, 2, or 3 stones");
+                continue;
+            }
+            else
+            {
+                n-= removed;
+                Console.WriteLine($"There are now {n} stones. ");
+                break;
+            }
+        }
 
-    }
-    for (int i = 0; i < studentArray.Length; i++)
-    {
-        var index = Array.IndexOf(studentArray, studentArray[i]);
-        index++;
-        Console.WriteLine($"{index}. {studentArray[i]}");//prints 1. Jack ...
 
+        //logic for winning
+        //    if () //logic for if you take stones including the last one
+        //    {
+
+        //        return true;// you win
+        //    }
+        //    else if () //logic for your friend taking stones including the last one
+        //    {
+        //        return false; //you lose
+        //    }
     }
-    break;
+    return n;
 }
 
+//METHODS
 
-
+//---------------------------------------------------------------------------------------------------------------------
