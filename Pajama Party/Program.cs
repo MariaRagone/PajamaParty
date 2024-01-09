@@ -453,7 +453,7 @@ int number = 251;
 bool result = IsPalindrome(number);
 
 Console.WriteLine(result);
-    static bool IsPalindrome(int x)
+static bool IsPalindrome(int x)
 {
     string original = x.ToString();
     string reversed = new string(original.Reverse().ToArray());
@@ -475,12 +475,92 @@ static bool IsPalindrome2(string x)
     }
     return true;
 }
+//another way
+
 string palindrome3 = "daddy";
 bool result3 = IsPalindrome3(palindrome3);
 Console.WriteLine(result3);
 static bool IsPalindrome3(string x)
-    {
+{
     string original = x.ToString();
-    string reversed = new string (original.Reverse().ToArray());
+    string reversed = new string(original.Reverse().ToArray());
     return original == reversed;
+}
+
+//another way
+string theWord = "racecar";
+bool isPal = (IsPalindrome4(theWord));
+Console.WriteLine($"Is the word: {theWord} a palendrome? {isPal}");
+static bool IsPalindrome4(string x)
+{
+    for (int i = 0; i < x.Length / 2; i++)
+    {
+        if (x[x.Length - 1 - i] != x[i])
+        {
+            return false;
+        }
     }
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// Check if the borrower is considered valid based on the given conditions
+//        // Borrowers are considered valid if:
+//        // - their name is not null or empty,
+//        // - their Dti is below or equal to 25,
+//        // - their owned properties are less than or equal to 3
+
+
+string borrower = "Top";
+int DTI = 25;
+int ownedProperties = 3;
+
+bool valid = IsValid(borrower, DTI, ownedProperties);
+Console.WriteLine($"is this borrower valid? {valid}");
+static bool IsValid(string borrower, int DTI, int ownedProperties)
+{
+    if (borrower == null || borrower == "" || DTI > 25 || ownedProperties > 3)
+    {
+        return false;
+
+    }
+    else
+    {
+        return true;
+    }
+}
+//NOW USE CLASSES
+
+Console.WriteLine("What is your name?");
+string bName = Console.ReadLine();
+Console.WriteLine("Enter Dti:");
+double dti = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter # Properties:");
+int propertiesOwned = int.Parse(Console.ReadLine());
+
+//create an instance of the Borrower
+Borrower borrower1 = new Borrower(bName, dti, propertiesOwned);
+Console.WriteLine(borrower1);
+
+//Console.WriteLine(IsValid(borrower1));
+
+//---------------------------------------------------------------------------------------------------------------------
+//Shopping Cart
+List<Items> itemsList = new List<Items>()
+{
+    new Items (1, "Toy", 20.00, 1),
+    new Items (1, "Stapler", 8.00, 1),
+    new Items (1, "Computer", 500.00, 1),
+};
+
+//Create an instance of the cart
+ShoppingCart cart1 = new ShoppingCart();
+
+//Methods
+static string AddItem()
+{
+    return 
+}
+//---------------------------------------------------------------------------------------------------------------------
+
