@@ -397,47 +397,90 @@ Console.WriteLine(prices.Max());
 
 //1 <= n <= 231 - 1
 
-Random random = new Random();
-int n = random.Next(1, 15);
-CanWinNim(n);
-static int CanWinNim(int n)
-{
-    while (n >= 1 && n <= Math.Pow(2, 32) - 1)
-    {
-        bool turn = true;
-        while (turn)
-        {
-            //logic for playing
-            Console.WriteLine($"Next person: There are {n} stones left. How many do you want to remove?");
-            int removed = int.Parse(Console.ReadLine());
-            if (removed < 1 || removed > 3)
-            {
-                Console.WriteLine("Please choose 1, 2, or 3 stones");
-                continue;
-            }
-            else
-            {
-                n-= removed;
-                Console.WriteLine($"There are now {n} stones. ");
-                break;
-            }
-        }
+//Random random = new Random();
+//int n = random.Next(1, 15);
+//CanWinNim(n);
+//static int CanWinNim(int n)
+//{
+//    while (n >= 1 && n <= Math.Pow(2, 32) - 1)
+//    {
+//        bool turn = true;
+//        while (n != 0)
+//        {
+//            //logic for playing
+//            Console.WriteLine($"Next person: There are {n} stones left. How many do you want to remove?");
+//            int removed = int.Parse(Console.ReadLine());
+//            if (removed < 1 || removed > 3)
+//            {
+//                Console.WriteLine("Please choose 1, 2, or 3 stones");
+//                continue;
+//            }
+//            else
+//            {
+//                n -= removed;
+//                Console.WriteLine($"There are now {n} stones. ");
+//                break;
+//            }
+//        }
+//        if (n == 0)
+//        {
+//            Console.WriteLine("You won!");
+//        }
 
 
-        //logic for winning
-        //    if () //logic for if you take stones including the last one
-        //    {
+//        //logic for winning
+//        //    if () //logic for if you take stones including the last one
+//        //    {
 
-        //        return true;// you win
-        //    }
-        //    else if () //logic for your friend taking stones including the last one
-        //    {
-        //        return false; //you lose
-        //    }
-    }
-    return n;
-}
+//        //        return true;// you win
+//        //    }
+//        //    else if () //logic for your friend taking stones including the last one
+//        //    {
+//        //        return false; //you lose
+//        //    }
+//    }
+//    return n;
+//}
 
 //METHODS
 
 //---------------------------------------------------------------------------------------------------------------------
+//Given an integer x, return true if x is a 
+//palindrome
+//, and false otherwise.
+
+int number = 251;
+bool result = IsPalindrome(number);
+
+Console.WriteLine(result);
+    static bool IsPalindrome(int x)
+{
+    string original = x.ToString();
+    string reversed = new string(original.Reverse().ToArray());
+
+    return original == reversed;
+}
+
+string palindrome = "mom";
+bool result2 = IsPalindrome2(palindrome);
+Console.WriteLine(result2);
+static bool IsPalindrome2(string x)
+{
+    for (int i = 0, j = x.Length - 1; i < j; i++, j--)
+    {
+        if (x[i] != x[j])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+string palindrome3 = "daddy";
+bool result3 = IsPalindrome3(palindrome3);
+Console.WriteLine(result3);
+static bool IsPalindrome3(string x)
+    {
+    string original = x.ToString();
+    string reversed = new string (original.Reverse().ToArray());
+    return original == reversed;
+    }
