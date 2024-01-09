@@ -549,9 +549,9 @@ Console.WriteLine(borrower1);
 //Shopping Cart
 List<Items> itemsList = new List<Items>()
 {
-    new Items (1, "Toy", 20.00, 1),
-    new Items (1, "Stapler", 8.00, 1),
-    new Items (1, "Computer", 500.00, 1),
+    new Items (1, "Toy", 20.00, 1, 200),
+    new Items (1, "Stapler", 8.00, 1, 100),
+    new Items (1, "Computer", 500.00, 1, 20),
 };
 
 //Create an instance of the cart
@@ -560,7 +560,10 @@ ShoppingCart cart1 = new ShoppingCart();
 //Methods
 static string AddItem()
 {
-    return 
+    return "hello";
 }
 //---------------------------------------------------------------------------------------------------------------------
+//Employee
 
+
+//---------------------------------------------------------------------------------------------------------------------

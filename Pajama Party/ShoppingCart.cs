@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pajama_Party
 {
-    internal class ShoppingCart
+    public class ShoppingCart
     {
         public int ShoppingCartId { get; set; }
 
@@ -32,8 +32,9 @@ namespace Pajama_Party
         public double price { get; set; }
         public int quantity { get; set; }
 
-    //constructor
-    public Items (int _itemID, string _itemName, double _price, int _quantity)
+        //constructor
+        public Items(int _itemID, string _itemName, double _price, int _quantity, int _shoppingCartId)
+                : base(_shoppingCartId)
         {
             itemID = _itemID;
             itemName = _itemName;
