@@ -161,9 +161,12 @@
 
 
 using Pajama_Party;
+using System.ComponentModel;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks.Sources;
 
 string[] greeting = { "Hi", "Hello", "Ciao", "Hola" };
 int[] grades = new int[5]; //there are 5 slots in this array
@@ -531,17 +534,17 @@ static bool IsValid(string borrower, int DTI, int ownedProperties)
 }
 //NOW USE CLASSES
 
-Console.WriteLine("What is your name?");
-string bName = Console.ReadLine();
-Console.WriteLine("Enter Dti:");
-double dti = double.Parse(Console.ReadLine());
+//Console.WriteLine("What is your name?");
+//string bName = Console.ReadLine();
+//Console.WriteLine("Enter Dti:");
+//double dti = double.Parse(Console.ReadLine());
 
-Console.WriteLine("Enter # Properties:");
-int propertiesOwned = int.Parse(Console.ReadLine());
+//Console.WriteLine("Enter # Properties:");
+//int propertiesOwned = int.Parse(Console.ReadLine());
 
-//create an instance of the Borrower
-Borrower borrower1 = new Borrower(bName, dti, propertiesOwned);
-Console.WriteLine(borrower1);
+////create an instance of the Borrower
+//Borrower borrower1 = new Borrower(bName, dti, propertiesOwned);
+//Console.WriteLine(borrower1);
 
 //Console.WriteLine(IsValid(borrower1));
 
@@ -563,7 +566,269 @@ static string AddItem()
     return "hello";
 }
 //---------------------------------------------------------------------------------------------------------------------
-//Employee
+//TEST QUESTIONS
+Console.WriteLine("Data Types:Declare a variable of type int named myNumber and assign it the value 42.");
+int myNumber = 42;
+Console.WriteLine("Arrays:Create an array of integers named nums with the values {1, 3, 5, 7, 9}.Print the third element of the array.");
+int[] nums = { 1, 3, 5, 7, 9 };
+Console.WriteLine(nums[2]);//prints 5, the 3rd element of the array 
+
+Console.WriteLine("Loops:\r\nWrite a for loop to print even numbers from 2 to 10.");
+for (int i = 2; i < 12; i += 2)
+{
+    Console.WriteLine(i);
+}
+
+Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties Name (string) and Age (int).\r\n" +
+    "Create an instance of the Person class with the name \"Alice\" and age 25.");
+//public class Person
+//{
+//    public string Name { get; set; }
+//    public int Age { get; set; }
+
+//    Person(string _name, int _age)
+//    {
+//        Name = _name;
+//        Age = _age;
+//    }
+//    public static void Main()
+//    {
+//        Person Alice = new Person("Alice", 25);
+
+//        Console.WriteLine(Alice);
+//    }
+
+//    //methods
+//    public override string ToString()
+//    {
+//        return $"Name: {Name}, Age: {Age}";
+//    }
+//}
+
+//Console.WriteLine("Methods:\r\n\r\nWrite a method named Add that takes two integers as parameters and returns their sum.");
+//int x = 10;
+//int y = 5;
+//static int Add(int x, int y)
+//{
+//    int sum = x + y;
+//    return sum;
+//}
+//Console.WriteLine(Add(x, y));
+
+//Console.WriteLine("String Manipulation:\r\n\r\nCreate a string variable named greet with the value \"Hello, World!\".\r\nPrint the length of the string.");
+//string greet = "Hello, World!";
+//Console.WriteLine(greet.Length);//prints 13
+
+//Console.WriteLine("Conditional Statements:\r\n\r\nWrite an if statement to check if a variable score is greater than or equal to 60. If true, print \"Passed.\"");
+//int score = 80;
+//if (score >= 60)
+//{
+//    Console.WriteLine("Passed.");
+//}
+//else
+//{
+//    Console.WriteLine("Try again!");
+//}
+
+//Console.WriteLine("Collections:\r\n\r\nCreate a List of strings named fruits with the values {\"Apple\", \"Banana\", " +
+//    "\"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\nPrint all the elements in the list.");
+//List<string> fruits = new List<string> { "Apple", "Banana", "Orange" };
+//fruits.Add("Grapes");
+//Console.WriteLine(string.Join(", ", fruits));
+////another way
+//foreach (string f in fruits)
+//{ Console.WriteLine(f); }
 
 
+//Console.WriteLine("Exception Handling:\r\nWrite a try-catch block to handle a potential FormatException when parsing a user-input string to an integer.");
+//bool runProgram = true;
+//while (true)
+//{
+//    Console.WriteLine("Type a number.");
+//    try
+//    {
+//        string userInput = Console.ReadLine();
+//        double parsedNumber = double.Parse(userInput);
+//        runProgram = false;
+//        break;
+//    }
+//    catch (FormatException error)
+//    {
+//        Console.WriteLine($"Error: {error.Message}\r\nPlease enter a valid integer.");
+//        continue;
+//    }
+//}
+////it can be done this way too
+//Console.WriteLine("type a number");
+//try
+//{
+//    int input = int.Parse(Console.ReadLine());
+//}
+//catch (FormatException error)
+//{
+//    Console.WriteLine($"Error: {error.Message}");
+//}
+
+//Console.WriteLine("LINQ:\r\nGiven an array of integers named numbers, use LINQ to filter and print only the even numbers.");
+//int[] nummies = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//int[] evenNummies = nummies.Where(num => num % 2 == 0).ToArray();
+////or var evenNumbers = numbers.Where(num => num % 2 == 0);
+//foreach (var n in evenNummies)
+//{ Console.WriteLine(n); }
+////or using non-LINQ
+//for (int i = 0; i < nummies.Length; i++)
+//{
+//    if (nummies[i] % 2 == 0)
+//    {
+//        Console.WriteLine(nummies[i]);
+//    }
+//}
+////or
+//foreach (int i in nummies)
+//{
+//    if ((i % 2) == 0)
+//    { Console.WriteLine(i); }
+//}
+
+//Console.WriteLine("Working with Arrays:\r\nDeclare an array of integers named numbers with values {1, 3, 5, 7, 9}.\r\n" +
+//    "Write a method named PrintThirdElement to print the third element of the array.");
+//int[] array = { 1, 3, 5, 7, 9 };
+//Console.WriteLine(PrintThirdElement(array));
+//static int PrintThirdElement(int[] array)
+//{
+//    int thirdElement = array[2];
+//    return thirdElement;//prints 5, the third element
+//}
+////or
+//Print3rdElement(array);
+//static void Print3rdElement(int[] array)
+//{
+//    Console.WriteLine($"The third element is {array[2]}");
+//}
+
+
+//Console.WriteLine("Exception Handling:\r\nWrite a method named ParseInt that takes a string as input and returns its integer representation. " +
+//    "Handle exceptions gracefully.");
+//ParseInt();
+//static void ParseInt()
+//{
+//    Console.WriteLine("Type an integer:");
+
+//    // Read the input from the user
+//    string userInput = Console.ReadLine();
+
+//    // Use int.TryParse to attempt parsing without throwing exceptions
+//    if (int.TryParse(userInput, out int result))
+//    {
+//        // Print the parsed integer
+//        Console.WriteLine("Parsed integer: " + result);
+//    }
+//    else
+//    {
+//        Console.WriteLine("Invalid input. Please enter a valid integer.");
+//    }
+//}
+////or 
+//ParseInt2();
+//static void ParseInt2()
+//{
+//    Console.WriteLine("Try the try/catch way: Type an integer:");
+//    try
+//    {
+//        int.Parse(Console.ReadLine());
+//    }
+//    catch (FormatException ex)
+//    {
+//        Console.WriteLine($"Error: {ex.Message}. Please enter a valid integer.");
+//    }
+//    catch (OverflowException ex)
+//    {
+//        Console.WriteLine($"Error: {ex.Message}. \"Input is too large or too small for an integer.");
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine($"Error: {ex.Message}. \"An unexpected error occurred.");
+//    }
+
+//}
+
+//Console.WriteLine("\r\n\r\n\r\nLINQ and Collections:\r\nCreate a list of strings named techSkills with values " +
+//    "{\"C#\", \"JavaScript\", \"React\", \"SQL\"}.\r\nUse LINQ to print skills that contain the word \"development.\"");
+
+//List<string> techSkills = new List<string> { "C# Developer", "React", "Java", "SQL", "Database Developer" };
+//var devSkills = techSkills.Where(i => i.Contains("Developer"));
+//foreach (var n in devSkills)
+//{ Console.WriteLine(n); }
+////or
+//foreach (var n in techSkills)
+//{
+//    if (n.Contains("Developer"))
+//    {
+//        Console.WriteLine(n);
+
+//    }
+//}
+////or
+//for (int i = 0; i < techSkills.Count; i++)
+//{
+//    if (techSkills[i].Contains("Developer"))
+//    {
+//        Console.WriteLine(techSkills[i]);
+//    }
+//}
+
+//Console.WriteLine("FizzBuzz:\r\nWrite a function that prints the numbers from 1 to 100. But for multiples of three, " +
+//    "print \"Fizz\" instead of the number, and for the multiples of five, " +
+//    "print \"Buzz.\" For numbers that are multiples of both three and five, print \"FizzBuzz.\"");
+//for (int i = 1; i <= 100; i++)
+//{
+//    if (i%3==0 && i%5==0)
+//    {
+//        Console.WriteLine("FizzBuzz");
+//    }
+//    else if (i % 3 == 0)
+//    {
+//        Console.WriteLine("Fizz");
+//    }
+//    else if (i % 5 == 0)
+//    {
+//        Console.WriteLine("Buzz");
+//    }
+//    else
+//    { Console.WriteLine(i); }
+//}
+Console.WriteLine("Reverse a String:\r\nWrite a function that takes a string as input and returns the string reversed.");
+
+string original = "Hello There";
+ReverseString(original);
+static void ReverseString(string x)
+{
+    string reversed = new string(x.ToCharArray().Reverse().ToArray());
+    Console.WriteLine(reversed);
+
+    //OR
+    char[] charArray = x.ToCharArray();
+    for (int i = 0, j = charArray.Length - 1; i < j; i++, j--)
+    {
+        // Swap characters at positions i and j
+        char temp = charArray[i];
+        charArray[i] = charArray[j];
+        charArray[j] = temp;
+    }
+    string reversed2 = new string(charArray);
+    Console.WriteLine(reversed2);
+}
+Console.WriteLine("Factorial:\r\nWrite a function to calculate the factorial of a given non-negative integer.");
+int factorial = CalculateFactorial(5); //prints 120
+public static int CalculateFactorial(int n) 
+{
+    int result = 1; 
+    for (int i = 1; i <= n; i++)
+    {
+    result *= i;
+
+    }
+    return result;
+}
 //---------------------------------------------------------------------------------------------------------------------
