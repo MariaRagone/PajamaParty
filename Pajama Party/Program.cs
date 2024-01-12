@@ -479,7 +479,7 @@ static bool IsPalindrome2(string x)
     return true;
 }
 //another way
-
+Console.WriteLine("Daddy");
 string palindrome3 = "daddy";
 bool result3 = IsPalindrome3(palindrome3);
 Console.WriteLine(result3);
@@ -820,15 +820,115 @@ static void ReverseString(string x)
     Console.WriteLine(reversed2);
 }
 Console.WriteLine("Factorial:\r\nWrite a function to calculate the factorial of a given non-negative integer.");
-int factorial = CalculateFactorial(5); //prints 120
-public static int CalculateFactorial(int n) 
+Console.WriteLine(CalculateFactorial(5)); //prints 120
+static int CalculateFactorial(int n)
 {
-    int result = 1; 
+    int result = 1;
     for (int i = 1; i <= n; i++)
     {
-    result *= i;
-
+        result *= i;
     }
     return result;
 }
+
+Console.WriteLine("Fibonacci Sequence:\r\nImplement a function to generate the nth Fibonacci number. " +
+    "The Fibonacci sequence is defined as follows: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.");
+//F(n)=F(n−1)+F(n−2)
+//recursion
+int n = 6;
+Console.WriteLine(CalculateFibonacci(n));
+static int CalculateFibonacci(int n)
+{
+    if (n <= 1)
+    {
+        return n;
+    }
+    int[] fibonacci = new int[n + 1]; //the +1 is used in fibonacci sequence calculations to account for the initial values of 0 and 1
+    fibonacci[0] = 0;
+    fibonacci[1] = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    return fibonacci[n];
+}
+
+Console.WriteLine("Write a function to determine if a given string is a palindrome. " +
+    "Ignore spaces, punctuation, and capitalization.");
+string a = "mom.";
+Console.WriteLine($"{a} is a palindrom: {CheckPalindrome(a)}");
+static bool CheckPalindrome(string a)
+{
+    string original = a.ToString().ToLower();
+    string clean = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+    string reversed = new string(clean.Reverse().ToArray());
+    //string reverse = new string(original.Reverse().ToArray());
+    return clean == reversed;
+}
+
+string f = "Dad. ?%";
+Console.WriteLine($"{f} is a palindrom: {Checked(f)}");
+static bool Checked(string x)
+{
+    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray()).ToLower();
+
+    for (int i = 0; i < cleaned.Length; i++)
+    {
+        if (cleaned[cleaned.Length - 1 - i] != cleaned[i])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+double u = 121.121;
+Console.WriteLine(C(u));
+static bool C(double x)
+{
+    if (x < 0) //check to see if the number is negative.
+    {
+        return false;
+    }
+    else if (x > 0)
+    {
+        string s = x.ToString();
+        string cleaned = new string(s.Where(Char.IsLetterOrDigit).ToArray());
+        string reversed = new string (cleaned.Reverse().ToArray());
+        return cleaned == reversed;
+        //for (int i = 0; i < s.Length / 2; i++)
+        //{
+        //    if (s[s.Length - 1 - i] == s[i])
+        //    { return true; }
+        //}
+    }
+    return false;
+}
+
+string h = "Racecars";
+
+Console.WriteLine(CheckForP(h));
+static bool CheckForP(string x)
+{
+    //string original = x.ToString();
+    //string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+    //string reversed = new string(cleaned.Reverse().ToArray());
+    //Console.WriteLine(reversed);
+    //return cleaned == reversed;
+
+
+for (int i = 0; i<x.Length / 2; i++)
+    {
+        if (x[x.Length-1-i] == x[i])
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
+
 //---------------------------------------------------------------------------------------------------------------------
