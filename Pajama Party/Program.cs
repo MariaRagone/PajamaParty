@@ -895,7 +895,7 @@ static bool C(double x)
     {
         string s = x.ToString();
         string cleaned = new string(s.Where(Char.IsLetterOrDigit).ToArray());
-        string reversed = new string (cleaned.Reverse().ToArray());
+        string reversed = new string(cleaned.Reverse().ToArray());
         return cleaned == reversed;
         //for (int i = 0; i < s.Length / 2; i++)
         //{
@@ -918,15 +918,41 @@ static bool CheckForP(string x)
     //return cleaned == reversed;
 
 
-for (int i = 0; i<x.Length / 2; i++)
+    for (int i = 0; i < x.Length / 2; i++)
     {
-        if (x[x.Length-1-i] == x[i])
+        if (x[x.Length - 1 - i] == x[i])
         {
             return true;
         }
     }
     return false;
 }
+
+Console.WriteLine("Given an array of integers and a target sum, " +
+    "find and return the indices of two numbers that add up to the target. " +
+    "Assume there is exactly one solution.");
+
+int targetSum = 5;
+int[] numbers1 = { 1, 2, 3, 7, 8, 1, 6 };
+int[] result5 = TwoSum(numbers1, targetSum);
+Console.WriteLine($"Indices: {result5[0]}, {result5[1]}");
+static int[] TwoSum(int[] array, int target)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        int indices = target - array[i];
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] == indices)
+            {
+                return new int[] { i, j };
+            }
+        }
+    }
+    throw new InvalidAsynchronousStateException("none found");
+}
+
+
 
 
 
