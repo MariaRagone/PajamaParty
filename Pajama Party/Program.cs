@@ -953,8 +953,158 @@ static int[] TwoSum(int[] array, int target)
 }
 
 
+Console.WriteLine("Implement a binary search algorithm to find the index of a given element in a sorted array. " +
+    "If the element is not present, return -1.");
 
+int targetElement = 9;
+int[] elements = { 1, 7, 9, 0, 5 }; //2 is in the 2nd index; should return "2"
+int result6 = LinearSearch(elements, targetElement);
+Console.WriteLine(result6);
+static int LinearSearch(int[] e, int t)
+{
+    for (int i = 0; i < e.Length; i++)
+    {
+        if (e[i] == t)
+            return i;
+    }
+    return -1;
+}
+Console.WriteLine("Write a function that takes two sorted arrays as input and merges them into a single sorted array.");
+int[] a1 = { 1, 9, 7, 0, 15 };
+int[] a2 = { 11, 3, 17, 1, 10 };
+int[] mergedArray = Merge(a1, a2);
+foreach (int i in mergedArray)
+{
+    Console.WriteLine(i);
+}
+static int[] Merge(int[] a1, int[] a2)
+{
+    int totalLength = a1.Length + a2.Length;
+    int[] newArray = new int[totalLength];
+    for (int i = 0; i < a1.Length; i++)
+    {
+        newArray[i] = a1[i];
+    }
+    for (int i = 0; i < a2.Length; i++)
+    {
+        newArray[a1.Length + i] = a2[i];
+    }
+    Array.Sort(newArray);
+    return newArray;
+}
+Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
 
+static void Main()
+{
+    int[] array = { 1, 2, 3, 4, 2, 5, 6, 7, 1, 8, 9, 9, 10 };
+    int[] uniqueElements = FindUniqueElements(array);
+    Console.WriteLine("Unique Elements:");
+    foreach (int element in uniqueElements)
+    {
+        Console.WriteLine(element);
+    }
+}
+static int[] FindUniqueElements(int[] array)
+{
+    int uniqueCount = 0;
+    // Count the number of unique elements
+    for (int i = 0; i < array.Length; i++)
+    {
+        bool isUnique = true;
+        // Check if the current element is already found before
+        for (int j = 0; j < i; j++)
+        {
+            if (array[i] == array[j])
+            {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique)
+        {
+            uniqueCount++;
+        }
+    }
+    // Create an array to store unique elements
+    int[] uniqueElements = new int[uniqueCount];
+    int currentIndex = 0;
+    // Fill the array with unique elements
+    for (int i = 0; i < array.Length; i++)
+    {
+        bool isUnique = true;
+        for (int j = 0; j < i; j++)
+        {
+            if (array[i] == array[j])
+            {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique)
+        {
+            uniqueElements[currentIndex] = array[i];
+            currentIndex++;
+        }
+    }
 
+    return uniqueElements;
+}
+Console.WriteLine("Check an array for even numbers using a loop.");
 
+int[] allNumbers = { 1, 3, 46, 23, 23, 12, 35, 6, 7, 8 };
+result = CheckEvent(allNumbers);
+Console.WriteLine(CheckEvent(allNumbers));
+static bool CheckEvent(int[] allNumbers)
+{
+
+    foreach (int i in allNumbers)
+    {
+        if (i % 2 == 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+if (result = true)
+{
+    Console.WriteLine("The array had even numbers");
+}
+else
+{
+    Console.WriteLine("They array had no even numbers");
+}
+
+Console.WriteLine("put the even numbers into a new array");
+
+EvenNumbers2(allNumbers);
+static int[] EvenNumbers2(int[] allNumbers)
+{
+    int countEven = 0;
+    // Count the number of even numbers
+    foreach (int i in allNumbers)
+    {
+        if (i % 2 == 0)
+        {
+            countEven++;
+        }
+    }
+    // Check if there are any even numbers
+    if (countEven > 0)
+    {
+        int[] evenArray = new int[countEven];
+        int index = 0;
+        // Populate the even numbers
+        foreach (int i in allNumbers)
+        {
+            if (i % 2 == 0)
+            {
+                evenArray[index] = i;
+                index++;
+            }
+        }
+        return evenArray;
+    }
+    throw new Exception("There were no even numbers");
+}
 //---------------------------------------------------------------------------------------------------------------------
