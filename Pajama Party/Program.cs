@@ -1217,29 +1217,104 @@ foreach (People p in peopleList)
 //    return third; 
 //}
 
-Console.WriteLine("Write a method named ParseInt that takes a string as input and returns its integer representation. Handle exceptions gracefully.");
+//Console.WriteLine("Write a method named ParseInt that takes a string as input and returns its integer representation. Handle exceptions gracefully.");
 
-ParseInt();
-static void ParseInt()
+//ParseInt();
+//static void ParseInt()
+//{
+//    Console.WriteLine("Enter a number");
+//    try
+//    { int.Parse(Console.ReadLine());
+//        Console.WriteLine("Thank you for the number.");
+//    }
+//    catch (FormatException x) 
+//    {
+//        Console.WriteLine($"{x.Message} \n Please enter an integer");
+//    }
+//    catch (OverflowException x)
+//    {
+//        Console.WriteLine( x.ToString());
+//    }
+//    catch (Exception x)
+//    {
+//        Console.WriteLine(x.Message);
+//    }
+//}
+
+//Console.WriteLine(" Create a list of strings named techSkills with values {\"C#\", \"JavaScript\", " +
+//    "\"React\", \"SQL\"}.\r\nUse LINQ to print skills that contain the word \"developer.\"");
+
+//List<string> jobNamesList = new List<string> { "Software Engineer" };
+
+//jobNamesList.Add("Software Developer");
+//jobNamesList.Add("Software Coder");
+//jobNamesList.Add("Junior Developer");
+//jobNamesList.Add("Data Analystr");
+//jobNamesList.Add("Data Developer");
+//bool runJobSearch = true;
+//while (runJobSearch)
+//{
+//    //list out all of the jobs
+//    Console.WriteLine($"\n \n There are {jobNamesList.Count} jobs");
+
+//    Console.WriteLine($"Here is a list of all jobs:");
+//    foreach (string jobName in jobNamesList)
+//    {
+//        Console.WriteLine(jobName);
+//    }
+
+//    string searchAgain = "y";
+
+//    while (searchAgain == "y")//search for a job
+//    {
+//        Console.WriteLine("Enter a job title to search.");
+//        string searchTerm = Console.ReadLine();
+
+//        List<string> developerJobs = jobNamesList.Where(x => x.ToLower().Contains(searchTerm)).ToList();
+
+//        Console.WriteLine($"These are the {searchTerm} jobs");
+
+//        foreach (string job in developerJobs)
+//        {
+//            Console.WriteLine(job);
+//        }
+//        Console.WriteLine("Search again? y/n");
+//        string searchAgainAnswer = Console.ReadLine();
+//        if (searchAgainAnswer == "y")
+//        {
+//            continue;
+//        }
+//        else
+//            Console.WriteLine("Bye!");
+//        runJobSearch = false;
+//        break;
+
+//    }
+//}
+
+Console.WriteLine("Write a function that prints the numbers from 1 to 100. But for multiples of three, print \"Fizz\" " +
+    "instead of the number, and for the multiples of five, print \"Buzz.\" For numbers that are multiples of both three and five, print \"FizzBuzz.\"");
+FizzBuzz();
+static void FizzBuzz()
 {
-    Console.WriteLine("Enter a number");
-    try
-    { int.Parse(Console.ReadLine());
-        Console.WriteLine("Thank you for the number.");
-    }
-    catch (FormatException x) 
+    for (int i = 0; i <= 100; i++)
     {
-        Console.WriteLine($"{x.Message} \n Please enter an integer");
-    }
-    catch (OverflowException x)
-    {
-        Console.WriteLine( x.ToString());
-    }
-    catch (Exception x)
-    {
-        Console.WriteLine(x.Message);
+        if (i % 3 == 0 && i % 5 == 0)
+        {
+            Console.WriteLine("FizzBuzz");
+        }
+        else if (i % 3 == 0)
+        {
+            Console.WriteLine("Fizz");
+        }
+        else if (i % 5 == 0)
+        {
+            Console.WriteLine("Buzz");
+        }
+        else
+        { Console.WriteLine(i); }
+
+
     }
 }
-
-
 //---------------------------------------------------------------------------------------------------------------------
