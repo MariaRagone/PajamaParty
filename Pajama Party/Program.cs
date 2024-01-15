@@ -1148,15 +1148,15 @@ foreach (Person p in personList)
     if (p.age > 12)
 { Console.WriteLine(p); }
 
-Employee James = new Employee();
 
-Clothing Top = new Clothing("Blouse", 10, "Fancy blouse", 35.00);
-Clothing Bottom = new Clothing("Jeans", 10, "Blue jeans", 75.00);
-Clothing Socks = new Clothing("Socks", 12, "White socks", 15.00);
-Console.WriteLine(Top);
+Clothing Pjs = new Clothing("Pjs", 10, "Cozy", 30);
+Clothing Shirt = new Clothing("T-shirt", 10, "Cotton", 25);
+Clothing Jeans = new Clothing("Jeans", 10, "blue jeans", 45);
 
-List<Clothing> topsList = new List<Clothing> { Top, Bottom, Socks };
-foreach (Clothing p in topsList)
+List<Clothing> clothingList = new List<Clothing> { Pjs, Shirt, Jeans };
+foreach (Clothing p in clothingList)
 { Console.WriteLine(p); }
 
-    //---------------------------------------------------------------------------------------------------------------------
+bool Maria = IsValid("Maria", 3, 12);
+Console.WriteLine(Maria);
+//---------------------------------------------------------------------------------------------------------------------
