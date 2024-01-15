@@ -1130,23 +1130,23 @@ static int[] EvenNumbers1(int[] allNumbers)
 
 Console.WriteLine(" Create a List of strings named fruits with the values {\"Apple\", \"Banana\", \"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\n" +
     "Print all the elements in the list.");
-List<string>fruity = new List<string> { "apple", "orange", "banana" };
+List<string> fruity = new List<string> { "apple", "orange", "banana" };
 fruity.Add("Grapes");
 
-    foreach (string s in fruity)
+foreach (string s in fruity)
 {
-Console.WriteLine(s);
+    Console.WriteLine(s);
 
 }
 
-Person Mark = new Person ("Mark", 12);
-Person Jamie=new Person("Jamie", 12);
-Person Alice=new Person("Alice", 15);
+Person Mark = new Person("Mark", 12);
+Person Jamie = new Person("Jamie", 12);
+Person Alice = new Person("Alice", 15);
 
-List<Person>personList = new List<Person> { Mark, Alice};
+List<Person> personList = new List<Person> { Mark, Alice };
 foreach (Person p in personList)
     if (p.age > 12)
-{ Console.WriteLine(p); }
+    { Console.WriteLine(p); }
 
 
 Clothing Pjs = new Clothing("Pjs", 10, "Cozy", 30);
@@ -1159,4 +1159,87 @@ foreach (Clothing p in clothingList)
 
 bool Maria = IsValid("Maria", 3, 12);
 Console.WriteLine(Maria);
+
+
+People Alice2 = new People("Alice", 16, false);
+
+Console.WriteLine(Alice2);
+Console.WriteLine(Alice2.IsOldEnough());
+People Maria2 = new People("Maria", 28, true);
+Console.WriteLine(Maria2.IsOldEnough());
+People Russ = new People("Russ", 47, true);
+Console.WriteLine(Russ.IsOldEnough());
+
+List<People> peopleList = new List<People> { Maria2, Russ, Alice2 };
+
+foreach (People p in peopleList)
+    Console.WriteLine(p.IsOldEnough());
+
+
+//Console.WriteLine("Write a try-catch block to handle a potential FormatException when parsing a user-input string to an integer.");
+//Console.WriteLine("Enter a number.");
+//try
+//{
+//    int.Parse(Console.ReadLine());
+//}
+//catch (FormatException x)
+//{
+//    Console.WriteLine($"Error: {x.Message} \n Please enter a valid integer.");
+//}
+
+
+
+//Console.WriteLine("Given an array of integers named numbers, use LINQ to filter and print only the even numbers.");
+//int[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//int[] evenInts = intArray.Where(x => x % 2 == 0).ToArray();
+//foreach (int even in evenInts)
+//{
+//    Console.WriteLine(even);
+//}
+
+////nonLINQ
+
+//for (int i = 0; i < intArray.Length; i++)
+//{
+//    if (intArray[i] % 2 == 0)
+//    { Console.WriteLine(intArray[i]); }
+//}
+
+//Console.WriteLine("Declare an array of integers named numbers with values {1, 3, 5, 7, 9}.\r\n" +
+//    "Write a method named PrintThirdElement to print the third element of the array.");
+
+//int[] arrayOfInts = { 1, 3, 5, 7, 9 };
+//Console.WriteLine(PrintThirdElement(arrayOfInts));//prints 5
+//static int PrintThirdElement(int[] x)
+//{
+//    int third = x[2];
+//    return third; 
+//}
+
+Console.WriteLine("Write a method named ParseInt that takes a string as input and returns its integer representation. Handle exceptions gracefully.");
+
+ParseInt();
+static void ParseInt()
+{
+    Console.WriteLine("Enter a number");
+    try
+    { int.Parse(Console.ReadLine());
+        Console.WriteLine("Thank you for the number.");
+    }
+    catch (FormatException x) 
+    {
+        Console.WriteLine($"{x.Message} \n Please enter an integer");
+    }
+    catch (OverflowException x)
+    {
+        Console.WriteLine( x.ToString());
+    }
+    catch (Exception x)
+    {
+        Console.WriteLine(x.Message);
+    }
+}
+
+
 //---------------------------------------------------------------------------------------------------------------------
