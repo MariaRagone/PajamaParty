@@ -167,6 +167,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks.Sources;
+using System.Runtime.CompilerServices;
 
 string[] greeting = { "Hi", "Hello", "Ciao", "Hola" };
 int[] grades = new int[5]; //there are 5 slots in this array
@@ -1107,4 +1108,55 @@ static int[] EvenNumbers2(int[] allNumbers)
     }
     throw new Exception("There were no even numbers");
 }
-//---------------------------------------------------------------------------------------------------------------------
+
+EvenNumbers1(allNumbers);
+
+static int[] EvenNumbers1(int[] allNumbers)
+{
+    List<int> evenList = new List<int>();
+    foreach (int i in allNumbers)
+    {
+        if (i % 2 == 0)
+        {
+            evenList.Add(i);
+        }
+    }
+    if (evenList.Count > 0)
+    {
+        return evenList.ToArray();
+    }
+    throw new Exception("There were no even numbers");
+}
+
+Console.WriteLine(" Create a List of strings named fruits with the values {\"Apple\", \"Banana\", \"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\n" +
+    "Print all the elements in the list.");
+List<string>fruity = new List<string> { "apple", "orange", "banana" };
+fruity.Add("Grapes");
+
+    foreach (string s in fruity)
+{
+Console.WriteLine(s);
+
+}
+
+Person Mark = new Person ("Mark", 12);
+Person Jamie=new Person("Jamie", 12);
+Person Alice=new Person("Alice", 15);
+
+List<Person>personList = new List<Person> { Mark, Alice};
+foreach (Person p in personList)
+    if (p.age > 12)
+{ Console.WriteLine(p); }
+
+Employee James = new Employee();
+
+Clothing Top = new Clothing("Blouse", 10, "Fancy blouse", 35.00);
+Clothing Bottom = new Clothing("Jeans", 10, "Blue jeans", 75.00);
+Clothing Socks = new Clothing("Socks", 12, "White socks", 15.00);
+Console.WriteLine(Top);
+
+List<Clothing> topsList = new List<Clothing> { Top, Bottom, Socks };
+foreach (Clothing p in topsList)
+{ Console.WriteLine(p); }
+
+    //---------------------------------------------------------------------------------------------------------------------
