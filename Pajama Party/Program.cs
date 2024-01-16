@@ -1598,20 +1598,33 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //    else
 //    { Console.WriteLine(i); }
 //}
-Console.WriteLine("Write a function that takes a string as input and returns the string reversed.");
-Console.WriteLine("give me a word");
-string inputFromUser = Console.ReadLine().ToString().Trim().ToLower();
-string cleaned = new string(inputFromUser.Where(Char.IsLetterOrDigit).ToArray());
-string reversed = new string(cleaned.Reverse().ToArray());
-Console.WriteLine($"Here is your word reversed {reversed}");
-
+//Console.WriteLine("Write a function that takes a string as input and returns the string reversed.");
+//bool isP = false;
+//Console.WriteLine("give me a word");
+//string inputFromUser = Console.ReadLine().ToString().Trim().ToLower();
+//Console.WriteLine(checkp(inputFromUser));
+//static bool checkp(string inputFromUser)
+//{
+//    string cleaned = new string(inputFromUser.Where(Char.IsLetterOrDigit).ToArray());
+//string reversed = new string(cleaned.Reverse().ToArray());
+//Console.WriteLine($"Here is your word reversed {reversed}");
+//    return reversed == cleaned; 
+//}
 Console.WriteLine(CalcF(5));
 static int CalcF(int x )
 {
-    int result = 1; 
+    int result = 1;
     for (int i = 1; i <= x; i++)
     {
         result *= i;
     }
-        return result; 
+    return result; 
+}
+Console.WriteLine(isPals("mom"));
+static bool isPals(string x)
+{
+    string original = x.ToString().ToLower().Trim();
+    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+    string reversed = new string(cleaned.Reverse().ToArray());
+    return reversed == cleaned;
 }
