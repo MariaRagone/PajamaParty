@@ -799,379 +799,379 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //    else
 //    { Console.WriteLine(i); }
 //}
-Console.WriteLine("Reverse a String:\r\nWrite a function that takes a string as input and returns the string reversed.");
+//Console.WriteLine("Reverse a String:\r\nWrite a function that takes a string as input and returns the string reversed.");
 
-string original = "Hello There";
-ReverseString(original);
-static void ReverseString(string x)
-{
+//string original = "Hello There";
+//ReverseString(original);
+//static void ReverseString(string x)
+//{
 
-    //OR
-    char[] charArray = x.ToCharArray();
-    for (int i = 0, j = charArray.Length - 1; i < j; i++, j--)
-    {
-        // Swap characters at positions i and j
-        char temp = charArray[i];
-        charArray[i] = charArray[j];
-        charArray[j] = temp;
-    }
-    string reversed2 = new string(charArray);
-    Console.WriteLine(reversed2);
-}
-Console.WriteLine("Factorial:\r\nWrite a function to calculate the factorial of a given non-negative integer.");
-Console.WriteLine(CalculateFactorial(5)); //prints 120
-static int CalculateFactorial(int n)
-{
-    int result = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        result *= i;
-    }
-    return result;
-}
+//    //OR
+//    char[] charArray = x.ToCharArray();
+//    for (int i = 0, j = charArray.Length - 1; i < j; i++, j--)
+//    {
+//        // Swap characters at positions i and j
+//        char temp = charArray[i];
+//        charArray[i] = charArray[j];
+//        charArray[j] = temp;
+//    }
+//    string reversed2 = new string(charArray);
+//    Console.WriteLine(reversed2);
+//}
+//Console.WriteLine("Factorial:\r\nWrite a function to calculate the factorial of a given non-negative integer.");
+//Console.WriteLine(CalculateFactorial(5)); //prints 120
+//static int CalculateFactorial(int n)
+//{
+//    int result = 1;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        result *= i;
+//    }
+//    return result;
+//}
 
-Console.WriteLine("Fibonacci Sequence:\r\nImplement a function to generate the nth Fibonacci number. " +
-    "The Fibonacci sequence is defined as follows: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.");
-//F(n)=F(n−1)+F(n−2)
-//recursion
-int n = 6;
-Console.WriteLine(CalculateFibonacci(n));
-static int CalculateFibonacci(int n)
-{
-    if (n <= 1)
-    {
-        return n;
-    }
-    int[] fibonacci = new int[n + 1]; //the +1 is used in fibonacci sequence calculations to account for the initial values of 0 and 1
-    fibonacci[0] = 0;
-    fibonacci[1] = 1;
-    for (int i = 2; i <= n; i++)
-    {
-        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-    }
-    return fibonacci[n];
-}
+//Console.WriteLine("Fibonacci Sequence:\r\nImplement a function to generate the nth Fibonacci number. " +
+//    "The Fibonacci sequence is defined as follows: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.");
+////F(n)=F(n−1)+F(n−2)
+////recursion
+//int n = 6;
+//Console.WriteLine(CalculateFibonacci(n));
+//static int CalculateFibonacci(int n)
+//{
+//    if (n <= 1)
+//    {
+//        return n;
+//    }
+//    int[] fibonacci = new int[n + 1]; //the +1 is used in fibonacci sequence calculations to account for the initial values of 0 and 1
+//    fibonacci[0] = 0;
+//    fibonacci[1] = 1;
+//    for (int i = 2; i <= n; i++)
+//    {
+//        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+//    }
+//    return fibonacci[n];
+//}
 
-Console.WriteLine("Write a function to determine if a given string is a palindrome. " +
-    "Ignore spaces, punctuation, and capitalization.");
-string a = "mom.";
-Console.WriteLine($"{a} is a palindrom: {CheckPalindrome(a)}");
-static bool CheckPalindrome(string a)
-{
-    string original = a.ToString().ToLower();
-    string clean = new string(original.Where(Char.IsLetterOrDigit).ToArray());
-    string reversed = new string(clean.Reverse().ToArray());
-    //string reverse = new string(original.Reverse().ToArray());
-    return clean == reversed;
-}
+//Console.WriteLine("Write a function to determine if a given string is a palindrome. " +
+//    "Ignore spaces, punctuation, and capitalization.");
+//string a = "mom.";
+//Console.WriteLine($"{a} is a palindrom: {CheckPalindrome(a)}");
+//static bool CheckPalindrome(string a)
+//{
+//    string original = a.ToString().ToLower();
+//    string clean = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    string reversed = new string(clean.Reverse().ToArray());
+//    //string reverse = new string(original.Reverse().ToArray());
+//    return clean == reversed;
+//}
 
-string f = "Dad. ?%";
-Console.WriteLine($"{f} is a palindrom: {Checked(f)}");
-static bool Checked(string x)
-{
-    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray()).ToLower();
+//string f = "Dad. ?%";
+//Console.WriteLine($"{f} is a palindrom: {Checked(f)}");
+//static bool Checked(string x)
+//{
+//    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray()).ToLower();
 
-    for (int i = 0; i < cleaned.Length; i++)
-    {
-        if (cleaned[cleaned.Length - 1 - i] != cleaned[i])
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-
-double u = 121.121;
-Console.WriteLine(C(u));
-static bool C(double x)
-{
-    if (x < 0) //check to see if the number is negative.
-    {
-        return false;
-    }
-    else if (x > 0)
-    {
-        string s = x.ToString();
-        string cleaned = new string(s.Where(Char.IsLetterOrDigit).ToArray());
-        string reversed = new string(cleaned.Reverse().ToArray());
-        return cleaned == reversed;
-        //for (int i = 0; i < s.Length / 2; i++)
-        //{
-        //    if (s[s.Length - 1 - i] == s[i])
-        //    { return true; }
-        //}
-    }
-    return false;
-}
-
-string h = "Racecars";
-
-Console.WriteLine(CheckForP(h));
-static bool CheckForP(string x)
-{
-    //string original = x.ToString();
-    //string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
-    //string reversed = new string(cleaned.Reverse().ToArray());
-    //Console.WriteLine(reversed);
-    //return cleaned == reversed;
+//    for (int i = 0; i < cleaned.Length; i++)
+//    {
+//        if (cleaned[cleaned.Length - 1 - i] != cleaned[i])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
 
 
-    for (int i = 0; i < x.Length / 2; i++)
-    {
-        if (x[x.Length - 1 - i] == x[i])
-        {
-            return true;
-        }
-    }
-    return false;
-}
+//double u = 121.121;
+//Console.WriteLine(C(u));
+//static bool C(double x)
+//{
+//    if (x < 0) //check to see if the number is negative.
+//    {
+//        return false;
+//    }
+//    else if (x > 0)
+//    {
+//        string s = x.ToString();
+//        string cleaned = new string(s.Where(Char.IsLetterOrDigit).ToArray());
+//        string reversed = new string(cleaned.Reverse().ToArray());
+//        return cleaned == reversed;
+//        //for (int i = 0; i < s.Length / 2; i++)
+//        //{
+//        //    if (s[s.Length - 1 - i] == s[i])
+//        //    { return true; }
+//        //}
+//    }
+//    return false;
+//}
 
-Console.WriteLine("Given an array of integers and a target sum, " +
-    "find and return the indices of two numbers that add up to the target. " +
-    "Assume there is exactly one solution.");
+//string h = "Racecars";
 
-int targetSum = 5;
-int[] numbers1 = { 1, 2, 3, 7, 8, 1, 6 };
-int[] result5 = TwoSum(numbers1, targetSum);
-Console.WriteLine($"Indices: {result5[0]}, {result5[1]}");
-static int[] TwoSum(int[] array, int target)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        int indices = target - array[i];
-        for (int j = i + 1; j < array.Length; j++)
-        {
-            if (array[j] == indices)
-            {
-                return new int[] { i, j };
-            }
-        }
-    }
-    throw new InvalidAsynchronousStateException("none found");
-}
-
-
-Console.WriteLine("Implement a binary search algorithm to find the index of a given element in a sorted array. " +
-    "If the element is not present, return -1.");
-
-int targetElement = 9;
-int[] elements = { 1, 7, 9, 0, 5 }; //2 is in the 2nd index; should return "2"
-int result6 = LinearSearch(elements, targetElement);
-Console.WriteLine(result6);
-static int LinearSearch(int[] e, int t)
-{
-    for (int i = 0; i < e.Length; i++)
-    {
-        if (e[i] == t)
-            return i;
-    }
-    return -1;
-}
-Console.WriteLine("Write a function that takes two sorted arrays as input and merges them into a single sorted array.");
-int[] a1 = { 1, 9, 7, 0, 15 };
-int[] a2 = { 11, 3, 17, 1, 10 };
-int[] mergedArray = Merge(a1, a2);
-foreach (int i in mergedArray)
-{
-    Console.WriteLine(i);
-}
-static int[] Merge(int[] a1, int[] a2)
-{
-    int totalLength = a1.Length + a2.Length;
-    int[] newArray = new int[totalLength];
-    for (int i = 0; i < a1.Length; i++)
-    {
-        newArray[i] = a1[i];
-    }
-    for (int i = 0; i < a2.Length; i++)
-    {
-        newArray[a1.Length + i] = a2[i];
-    }
-    Array.Sort(newArray);
-    return newArray;
-}
-Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
-
-static void Main()
-{
-    int[] array = { 1, 2, 3, 4, 2, 5, 6, 7, 1, 8, 9, 9, 10 };
-    int[] uniqueElements = FindUniqueElements(array);
-    Console.WriteLine("Unique Elements:");
-    foreach (int element in uniqueElements)
-    {
-        Console.WriteLine(element);
-    }
-}
-static int[] FindUniqueElements(int[] array)
-{
-    int uniqueCount = 0;
-    // Count the number of unique elements
-    for (int i = 0; i < array.Length; i++)
-    {
-        bool isUnique = true;
-        // Check if the current element is already found before
-        for (int j = 0; j < i; j++)
-        {
-            if (array[i] == array[j])
-            {
-                isUnique = false;
-                break;
-            }
-        }
-        if (isUnique)
-        {
-            uniqueCount++;
-        }
-    }
-    // Create an array to store unique elements
-    int[] uniqueElements = new int[uniqueCount];
-    int currentIndex = 0;
-    // Fill the array with unique elements
-    for (int i = 0; i < array.Length; i++)
-    {
-        bool isUnique = true;
-        for (int j = 0; j < i; j++)
-        {
-            if (array[i] == array[j])
-            {
-                isUnique = false;
-                break;
-            }
-        }
-        if (isUnique)
-        {
-            uniqueElements[currentIndex] = array[i];
-            currentIndex++;
-        }
-    }
-
-    return uniqueElements;
-}
-Console.WriteLine("Check an array for even numbers using a loop.");
-
-int[] allNumbers = { 1, 3, 46, 23, 23, 12, 35, 6, 7, 8 };
-result = CheckEvent(allNumbers);
-Console.WriteLine(CheckEvent(allNumbers));
-static bool CheckEvent(int[] allNumbers)
-{
-
-    foreach (int i in allNumbers)
-    {
-        if (i % 2 == 0)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-if (result = true)
-{
-    Console.WriteLine("The array had even numbers");
-}
-else
-{
-    Console.WriteLine("They array had no even numbers");
-}
-
-Console.WriteLine("put the even numbers into a new array");
-
-EvenNumbers2(allNumbers);
-static int[] EvenNumbers2(int[] allNumbers)
-{
-    int countEven = 0;
-    // Count the number of even numbers
-    foreach (int i in allNumbers)
-    {
-        if (i % 2 == 0)
-        {
-            countEven++;
-        }
-    }
-    // Check if there are any even numbers
-    if (countEven > 0)
-    {
-        int[] evenArray = new int[countEven];
-        int index = 0;
-        // Populate the even numbers
-        foreach (int i in allNumbers)
-        {
-            if (i % 2 == 0)
-            {
-                evenArray[index] = i;
-                index++;
-            }
-        }
-        return evenArray;
-    }
-    throw new Exception("There were no even numbers");
-}
-
-EvenNumbers1(allNumbers);
-
-static int[] EvenNumbers1(int[] allNumbers)
-{
-    List<int> evenList = new List<int>();
-    foreach (int i in allNumbers)
-    {
-        if (i % 2 == 0)
-        {
-            evenList.Add(i);
-        }
-    }
-    if (evenList.Count > 0)
-    {
-        return evenList.ToArray();
-    }
-    throw new Exception("There were no even numbers");
-}
-
-Console.WriteLine(" Create a List of strings named fruits with the values {\"Apple\", \"Banana\", \"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\n" +
-    "Print all the elements in the list.");
-List<string> fruity = new List<string> { "apple", "orange", "banana" };
-fruity.Add("Grapes");
-
-foreach (string s in fruity)
-{
-    Console.WriteLine(s);
-
-}
-
-Person Mark = new Person("Mark", 12);
-Person Jamie = new Person("Jamie", 12);
-Person Alice = new Person("Alice", 15);
-
-List<Person> personList = new List<Person> { Mark, Alice };
-foreach (Person p in personList)
-    if (p.age > 12)
-    { Console.WriteLine(p); }
+//Console.WriteLine(CheckForP(h));
+//static bool CheckForP(string x)
+//{
+//    //string original = x.ToString();
+//    //string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    //string reversed = new string(cleaned.Reverse().ToArray());
+//    //Console.WriteLine(reversed);
+//    //return cleaned == reversed;
 
 
-Clothing Pjs = new Clothing("Pjs", 10, "Cozy", 30);
-Clothing Shirt = new Clothing("T-shirt", 10, "Cotton", 25);
-Clothing Jeans = new Clothing("Jeans", 10, "blue jeans", 45);
+//    for (int i = 0; i < x.Length / 2; i++)
+//    {
+//        if (x[x.Length - 1 - i] == x[i])
+//        {
+//            return true;
+//        }
+//    }
+//    return false;
+//}
 
-List<Clothing> clothingList = new List<Clothing> { Pjs, Shirt, Jeans };
-foreach (Clothing p in clothingList)
-{ Console.WriteLine(p); }
+//Console.WriteLine("Given an array of integers and a target sum, " +
+//    "find and return the indices of two numbers that add up to the target. " +
+//    "Assume there is exactly one solution.");
 
-bool Maria = IsValid("Maria", 3, 12);
-Console.WriteLine(Maria);
+//int targetSum = 5;
+//int[] numbers1 = { 1, 2, 3, 7, 8, 1, 6 };
+//int[] result5 = TwoSum(numbers1, targetSum);
+//Console.WriteLine($"Indices: {result5[0]}, {result5[1]}");
+//static int[] TwoSum(int[] array, int target)
+//{
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        int indices = target - array[i];
+//        for (int j = i + 1; j < array.Length; j++)
+//        {
+//            if (array[j] == indices)
+//            {
+//                return new int[] { i, j };
+//            }
+//        }
+//    }
+//    throw new InvalidAsynchronousStateException("none found");
+//}
 
 
-People Alice2 = new People("Alice", 16, false);
+//Console.WriteLine("Implement a binary search algorithm to find the index of a given element in a sorted array. " +
+//    "If the element is not present, return -1.");
 
-Console.WriteLine(Alice2);
-Console.WriteLine(Alice2.IsOldEnough());
-People Maria2 = new People("Maria", 28, true);
-Console.WriteLine(Maria2.IsOldEnough());
-People Russ = new People("Russ", 47, true);
-Console.WriteLine(Russ.IsOldEnough());
+//int targetElement = 9;
+//int[] elements = { 1, 7, 9, 0, 5 }; //2 is in the 2nd index; should return "2"
+//int result6 = LinearSearch(elements, targetElement);
+//Console.WriteLine(result6);
+//static int LinearSearch(int[] e, int t)
+//{
+//    for (int i = 0; i < e.Length; i++)
+//    {
+//        if (e[i] == t)
+//            return i;
+//    }
+//    return -1;
+//}
+//Console.WriteLine("Write a function that takes two sorted arrays as input and merges them into a single sorted array.");
+//int[] a1 = { 1, 9, 7, 0, 15 };
+//int[] a2 = { 11, 3, 17, 1, 10 };
+//int[] mergedArray = Merge(a1, a2);
+//foreach (int i in mergedArray)
+//{
+//    Console.WriteLine(i);
+//}
+//static int[] Merge(int[] a1, int[] a2)
+//{
+//    int totalLength = a1.Length + a2.Length;
+//    int[] newArray = new int[totalLength];
+//    for (int i = 0; i < a1.Length; i++)
+//    {
+//        newArray[i] = a1[i];
+//    }
+//    for (int i = 0; i < a2.Length; i++)
+//    {
+//        newArray[a1.Length + i] = a2[i];
+//    }
+//    Array.Sort(newArray);
+//    return newArray;
+//}
+//Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
 
-List<People> peopleList = new List<People> { Maria2, Russ, Alice2 };
+//static void Main()
+//{
+//    int[] array = { 1, 2, 3, 4, 2, 5, 6, 7, 1, 8, 9, 9, 10 };
+//    int[] uniqueElements = FindUniqueElements(array);
+//    Console.WriteLine("Unique Elements:");
+//    foreach (int element in uniqueElements)
+//    {
+//        Console.WriteLine(element);
+//    }
+//}
+//static int[] FindUniqueElements(int[] array)
+//{
+//    int uniqueCount = 0;
+//    // Count the number of unique elements
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        bool isUnique = true;
+//        // Check if the current element is already found before
+//        for (int j = 0; j < i; j++)
+//        {
+//            if (array[i] == array[j])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//        }
+//        if (isUnique)
+//        {
+//            uniqueCount++;
+//        }
+//    }
+//    // Create an array to store unique elements
+//    int[] uniqueElements = new int[uniqueCount];
+//    int currentIndex = 0;
+//    // Fill the array with unique elements
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        bool isUnique = true;
+//        for (int j = 0; j < i; j++)
+//        {
+//            if (array[i] == array[j])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//        }
+//        if (isUnique)
+//        {
+//            uniqueElements[currentIndex] = array[i];
+//            currentIndex++;
+//        }
+//    }
 
-foreach (People p in peopleList)
-    Console.WriteLine(p.IsOldEnough());
+//    return uniqueElements;
+//}
+//Console.WriteLine("Check an array for even numbers using a loop.");
+
+//int[] allNumbers = { 1, 3, 46, 23, 23, 12, 35, 6, 7, 8 };
+//result = CheckEvent(allNumbers);
+//Console.WriteLine(CheckEvent(allNumbers));
+//static bool CheckEvent(int[] allNumbers)
+//{
+
+//    foreach (int i in allNumbers)
+//    {
+//        if (i % 2 == 0)
+//        {
+//            return true;
+//        }
+//    }
+//    return false;
+//}
+//if (result = true)
+//{
+//    Console.WriteLine("The array had even numbers");
+//}
+//else
+//{
+//    Console.WriteLine("They array had no even numbers");
+//}
+
+//Console.WriteLine("put the even numbers into a new array");
+
+//EvenNumbers2(allNumbers);
+//static int[] EvenNumbers2(int[] allNumbers)
+//{
+//    int countEven = 0;
+//    // Count the number of even numbers
+//    foreach (int i in allNumbers)
+//    {
+//        if (i % 2 == 0)
+//        {
+//            countEven++;
+//        }
+//    }
+//    // Check if there are any even numbers
+//    if (countEven > 0)
+//    {
+//        int[] evenArray = new int[countEven];
+//        int index = 0;
+//        // Populate the even numbers
+//        foreach (int i in allNumbers)
+//        {
+//            if (i % 2 == 0)
+//            {
+//                evenArray[index] = i;
+//                index++;
+//            }
+//        }
+//        return evenArray;
+//    }
+//    throw new Exception("There were no even numbers");
+//}
+
+//EvenNumbers1(allNumbers);
+
+//static int[] EvenNumbers1(int[] allNumbers)
+//{
+//    List<int> evenList = new List<int>();
+//    foreach (int i in allNumbers)
+//    {
+//        if (i % 2 == 0)
+//        {
+//            evenList.Add(i);
+//        }
+//    }
+//    if (evenList.Count > 0)
+//    {
+//        return evenList.ToArray();
+//    }
+//    throw new Exception("There were no even numbers");
+//}
+
+//Console.WriteLine(" Create a List of strings named fruits with the values {\"Apple\", \"Banana\", \"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\n" +
+//    "Print all the elements in the list.");
+//List<string> fruity = new List<string> { "apple", "orange", "banana" };
+//fruity.Add("Grapes");
+
+//foreach (string s in fruity)
+//{
+//    Console.WriteLine(s);
+
+//}
+
+//Person Mark = new Person("Mark", 12);
+//Person Jamie = new Person("Jamie", 12);
+//Person Alice = new Person("Alice", 15);
+
+//List<Person> personList = new List<Person> { Mark, Alice };
+//foreach (Person p in personList)
+//    if (p.Age > 12)
+//    { Console.WriteLine(p); }
+
+
+//Clothing Pjs = new Clothing("Pjs", 10, "Cozy", 30);
+//Clothing Shirt = new Clothing("T-shirt", 10, "Cotton", 25);
+//Clothing Jeans = new Clothing("Jeans", 10, "blue jeans", 45);
+
+//List<Clothing> clothingList = new List<Clothing> { Pjs, Shirt, Jeans };
+//foreach (Clothing p in clothingList)
+//{ Console.WriteLine(p); }
+
+//bool Maria = IsValid("Maria", 3, 12);
+//Console.WriteLine(Maria);
+
+
+//People Alice2 = new People("Alice", 16, false);
+
+//Console.WriteLine(Alice2);
+//Console.WriteLine(Alice2.IsOldEnough());
+//People Maria2 = new People("Maria", 28, true);
+//Console.WriteLine(Maria2.IsOldEnough());
+//People Russ = new People("Russ", 47, true);
+//Console.WriteLine(Russ.IsOldEnough());
+
+//List<People> peopleList = new List<People> { Maria2, Russ, Alice2 };
+
+//foreach (People p in peopleList)
+//    Console.WriteLine(p.IsOldEnough());
 
 
 //Console.WriteLine("Write a try-catch block to handle a potential FormatException when parsing a user-input string to an integer.");
@@ -1316,125 +1316,302 @@ foreach (People p in peopleList)
 //    }
 //}
 
-Console.WriteLine(" Write a function that takes a string as input and returns the string reversed.");
+//Console.WriteLine(" Write a function that takes a string as input and returns the string reversed.");
 
-Console.WriteLine(ReverseString2("   Hello  ,   "));
-string reverseThis = "Hello, how are you today?";
-Console.WriteLine(ReverseString2(reverseThis));
-static string ReverseString2(string x)
+//Console.WriteLine(ReverseString2("   Hello  ,   "));
+//string reverseThis = "Hello, how are you today?";
+//Console.WriteLine(ReverseString2(reverseThis));
+//static string ReverseString2(string x)
+//{
+
+//    string original = x.ToString().Trim().ToLower();//remove white spaces and make all letters lower case
+//    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    string reversed = new string(cleaned.Reverse().ToArray());
+//    return reversed;
+//}
+
+//Console.WriteLine("Write a function to calculate the factorial of a given non-negative integer.");
+
+//Console.WriteLine(CalculateFactorial1(5));//prints 120
+//static int CalculateFactorial1(int x)
+
+//{
+//    int result = 1;
+//    for (int i = 1; i <= x; i++)
+//    {
+
+//        result *= i;
+//    }
+//    return result;
+//}
+
+//Console.WriteLine("Implement a function to generate the nth Fibonacci number. The Fibonacci sequence is defined as follows: " +
+//    "F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.");
+
+//Console.WriteLine(CalcFibonacci(6)); //should print "8"
+//static int CalcFibonacci(int n)
+//{
+//    if (n <= 1)
+//        return n;
+
+//    int[] fib = new int[n + 1];
+//    fib[0] = 0;
+//    fib[1] = 1;
+
+//    for (int i = 2; i <= n; i++)
+//    {
+//        fib[i] = fib[i - 1] + fib[i - 2];
+//    }
+//    return fib[n];
+//}
+//Console.WriteLine("Write a function to determine if a given string is a palindrome. Ignore spaces, punctuation, and capitalization.");
+//string pal = "This is a palindrome";
+//string pal2 = "Mom.";
+//Console.WriteLine(CheckPal(pal));//prints "false"
+//Console.WriteLine(CheckPal(pal2));//prints "true"
+//static bool CheckPal(string p)
+//{
+//    string original = p.ToString().ToLower().Trim();
+//    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    //string reversed = new string (cleaned.Reverse().ToArray());
+//    //return cleaned == reversed;
+
+//    for (int i = 0; i < cleaned.Length / 2; i++)
+//    {
+//        if (cleaned[cleaned.Length - 1 - i] != cleaned[i])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+
+//Console.WriteLine("Given an array of integers and a target sum, find and return the indices of two numbers that add up to the target. " +
+//    "Assume there is exactly one solution.");
+
+//int target = 5;
+//int[] ints = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//int[] twoNumbers = FindTwoSum(ints, target); //new array that will hold the two indices
+//Console.WriteLine($"The two numbers are {twoNumbers[0]} and {twoNumbers[1]}"); //prints 1, 2 for the indices
+//static int[] FindTwoSum(int[] x, int target)
+//{
+//    int[] twoNumbers = new int[1]; //new array that will hold the two indices
+
+//    for (int i = 0; i < x.Length; i++)
+//    {
+//        int indices = target - x[i];
+//        for (int j = 0; j < x.Length; j++)
+//        {
+//            if (x[j] == indices)
+//            { return new int[] { i, j }; }
+//        }
+//    }
+//    throw new InvalidAsynchronousStateException("none found");
+//}
+//Console.WriteLine("Write a function that takes two sorted arrays as input and merges them into a single sorted array.");
+//int[] array1 = { 1, 18, 3, 11, 5 };
+//int[] array2 = { 6, 4, 9, 8, 12 };
+//Array.Sort(array1);
+//Array.Sort(array2);
+//MergeTheArray(array1, array2);
+//static int[] MergeTheArray(int[] array1, int[] array2)
+//{
+//    int[] addedArray = new int[array1.Length + array2.Length];//create new array to store the old arrays
+
+//    for (int i = 0; i < array1.Length; i++)
+//    {
+//        addedArray[i] = array1[i];
+//    }
+//    for (int i = array1.Length; i < addedArray.Length; i++)
+//    {
+//        addedArray[i] = array2[i - array1.Length];
+//    }
+//    Array.Sort(addedArray);
+//    Console.WriteLine("here is the merged array.");
+//    foreach (int i in addedArray)
+//    {
+//        Console.WriteLine(i);
+//    }
+//    return addedArray;
+//}
+//Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
+
+//int[] nonUnique = new int[] { 1, 1, 3, 4, 4, 5, 2 }; //unique items are 3, 5, and 2
+//Console.WriteLine(FindUnique(nonUnique));
+//static int[] FindUnique(int[] nonUnique)
+//{
+//    int count = 0;
+//    //first we need to count how many unique items there are
+//    //then we need to make a new array and initiate it with the # of the unique items
+//    //then we need to fill the new array with the unique items
+
+//    for (int i = 0; i < nonUnique.Length; i++) //step 1
+//    {
+//        bool isUnique = true;
+//        for (int j = 0; j < i; j++)
+//        {
+//            if (nonUnique[j] == nonUnique[i])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//            if (isUnique)
+//            { count++; }
+//        }
+//    }
+//    int[] unique = new int[count]; //step 2
+//    int currentIndex = 0;
+//    // Fill the array with unique elements
+//    for (int i = 0; i < nonUnique.Length; i++)
+//    {
+//        bool isUnique = true;
+//        for (int j = 0; j < i; j++)
+//        {
+
+//            if (nonUnique[i] == nonUnique[j])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//        }
+//        if (isUnique)
+//        {
+//            unique[currentIndex] = nonUnique[i];
+//            currentIndex++;
+//        }
+//    }
+//    return unique;
+//}
+////---------------------------------------------------------------------------------------------------------------------
+
+//Console.WriteLine("Check an array for even numbers using a loop.");
+//int[] allNums = new int[] { 1, 3, 5, 9, 5, 6, 8, 2, 4 };//prints 6, 8, 2, 4
+//int count = 0;
+//for (int i = 0; i < allNums.Length; i++)
+//{
+//    if (allNums[i] % 2 == 0)
+//    {
+//        count++;
+//    }
+//}
+//if (count > 0)
+//{
+//    int[] evenNumbers = new int[count];
+//        int currentIndex = 0;
+
+//    for (int i = 0; i < allNums.Length; i++)
+//    {
+//        if (allNums[i] % 2 == 0)
+//        {
+//            evenNumbers[currentIndex] = allNums[i];
+//            currentIndex  ++;
+//        }
+//    }
+//    foreach (int i in evenNumbers)
+//    {
+//        Console.WriteLine(i);
+//    }
+//}
+
+//List<int> allNumsList = new List<int> { 1, 2, 4, 5, 6, 7, 8 };
+//List<int> evenList = new List<int>();
+//foreach (int i in allNumsList)
+//{
+//    if (i % 2 == 0)
+//    {
+//        evenList.Add(i);
+//        Console.WriteLine(i);
+//    }
+//}
+
+//Console.WriteLine("Create a List of strings named fruits with the values " +
+//    "{\"Apple\", \"Banana\", \"Orange\"}.\r\nAdd \"Grapes\" to the list.\r\nPrint all the elements in the list.");
+//List<string> fruitList = new List<string> { "Apple", "Banana", "Orange" };
+//fruitList.Add("Grapes");
+//foreach  (string s in fruitList)
+//{
+//    Console.WriteLine(s);
+//}
+//Console.WriteLine(" Create a string variable named greeting with the value " +
+//    "\"Hello, World!\".\r\nPrint the length of the string.");
+//string greetingHello = "Hello, World!";
+//Console.WriteLine(greetingHello.Length);
+
+
+//Person Matthew = new Person("Matthew",46);
+//Person Paul = new Person("Paul", 65);
+//Person Luke = new Person("Luke", 23);
+//Person John = new Person("John", 34);
+
+//Person[] peopleArray = new Person[] { Matthew, Paul, Luke, John };
+//List<Person> personsList = new List<Person> { Matthew, Paul, Luke, John};
+//foreach (Person p in personsList)
+//{
+//    Console.WriteLine(p);
+//}
+
+//Console.WriteLine("Type an integer");
+
+//try
+//{
+//    int.Parse(Console.ReadLine());
+//}
+//catch (FormatException error)
+//{ Console.WriteLine(error.Message); }
+
+//Console.WriteLine("Given an array of integers named numbers, use LINQ to filter and print only the even numbers.");
+//int[] allNums1 = new int[] { 1, 3, 5, 9, 5, 6, 8, 2, 4 };//prints 6, 8, 2, 4
+//int [] array6 = allNums1.Where(x => x %2 ==0).ToArray();
+//Array.Sort(array6);
+//foreach  (int i in array6)
+//{ Console.WriteLine(i); }
+
+//Console.WriteLine("Declare an array of integers named numbers with values {1, 3, 5, 7, 9}.\r\nWrite a " +
+//    "method named PrintThirdElement to print the third element of the array.");
+//int[] integers = new int[] { 1, 3, 5, 7, 9 };
+//Console.WriteLine(Print3rdNumber(integers));
+//static int Print3rdNumber(int[] array)
+//{
+//    return array[2];
+//}
+
+//Console.WriteLine("Create a list of strings named techSkills with values " +
+//    "{\"C#\", \"JavaScript\", \"React\", \"SQL\"}.\r\nUse LINQ to print skills that contain the word \"development.\"");
+
+//List<string> techJobs = new List<string> { "Java Dev", "C# Dev", "Web Admin" };
+
+//List<string> devJobs = techJobs.Where(x => x.ToLower().Contains("dev")).ToList();
+//foreach (string job in devJobs)
+//{ Console.WriteLine(job); }
+
+//Console.WriteLine("Write a function that prints the numbers from 1 to 100. But for multiples of three, print \"Fizz\" instead of the number, and for the multiples of five, " +
+//    "print \"Buzz.\" For numbers that are multiples of both three and five, print \"FizzBuzz.\"");
+//for (int i = 0; i <= 100; i++)
+//{
+//    if (i % 3 == 0 && i % 5 == 0)
+//    { Console.WriteLine("FizzBuzz"); }
+//    else if (i % 3 == 0)
+//    { Console.WriteLine("Fizz"); }
+//    else if (i % 5 == 0)
+//    { Console.WriteLine("Buzz"); }
+//    else
+//    { Console.WriteLine(i); }
+//}
+Console.WriteLine("Write a function that takes a string as input and returns the string reversed.");
+Console.WriteLine("give me a word");
+string inputFromUser = Console.ReadLine().ToString().Trim().ToLower();
+string cleaned = new string(inputFromUser.Where(Char.IsLetterOrDigit).ToArray());
+string reversed = new string(cleaned.Reverse().ToArray());
+Console.WriteLine($"Here is your word reversed {reversed}");
+
+Console.WriteLine(CalcF(5));
+static int CalcF(int x )
 {
-
-    string original = x.ToString().Trim().ToLower();//remove white spaces and make all letters lower case
-    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
-    string reversed = new string(cleaned.Reverse().ToArray());
-    return reversed;
-}
-
-Console.WriteLine("Write a function to calculate the factorial of a given non-negative integer.");
-
-Console.WriteLine(CalculateFactorial1(5));//prints 120
-static int CalculateFactorial1(int x)
-
-{
-    int result = 1;
+    int result = 1; 
     for (int i = 1; i <= x; i++)
     {
-
         result *= i;
     }
-    return result;
+        return result; 
 }
-
-Console.WriteLine("Implement a function to generate the nth Fibonacci number. The Fibonacci sequence is defined as follows: " +
-    "F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.");
-
-Console.WriteLine(CalcFibonacci(6)); //should print "8"
-static int CalcFibonacci(int n)
-{
-    if (n <= 1)
-        return n;
-
-    int[] fib = new int[n + 1];
-    fib[0] = 0;
-    fib[1] = 1;
-
-    for (int i = 2; i <= n; i++)
-    {
-        fib[i] = fib[i - 1] + fib[i - 2];
-    }
-    return fib[n];
-}
-Console.WriteLine("Write a function to determine if a given string is a palindrome. Ignore spaces, punctuation, and capitalization.");
-string pal = "This is a palindrome";
-string pal2 = "Mom.";
-Console.WriteLine(CheckPal(pal));//prints "false"
-Console.WriteLine(CheckPal(pal2));//prints "true"
-static bool CheckPal(string p)
-{
-    string original = p.ToString().ToLower().Trim();
-    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
-    //string reversed = new string (cleaned.Reverse().ToArray());
-    //return cleaned == reversed;
-
-    for (int i = 0; i < cleaned.Length / 2; i++)
-    {
-        if (cleaned[cleaned.Length - 1 - i] != cleaned[i])
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-
-Console.WriteLine("Given an array of integers and a target sum, find and return the indices of two numbers that add up to the target. " +
-    "Assume there is exactly one solution.");
-
-int target = 5;
-int[] ints = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-int[] twoNumbers = FindTwoSum(ints, target); //new array that will hold the two indices
-Console.WriteLine($"The two numbers are {twoNumbers[0]} and {twoNumbers[1]}"); //prints 1, 2 for the indices
-static int[] FindTwoSum(int[] x, int target)
-{
-    int[] twoNumbers = new int[1]; //new array that will hold the two indices
-
-    for (int i = 0; i < x.Length; i++)
-    {
-        int indices = target - x[i];
-        for (int j = 0; j < x.Length; j++)
-        {
-            if (x[j] == indices)
-            { return new int[] { i, j }; }
-        }
-    }
-    throw new InvalidAsynchronousStateException("none found");
-}
-Console.WriteLine("Write a function that takes two sorted arrays as input and merges them into a single sorted array.");
-int[] array1 = { 1, 18, 3, 11, 5 };
-int[] array2 = { 6, 4, 9, 8, 12 };
-Array.Sort(array1);
-Array.Sort(array2);
- MergeTheArray(array1, array2);
-static int[] MergeTheArray(int[] array1, int[] array2)
-{
-    int[] addedArray = new int[array1.Length + array2.Length];//create new array to store the old arrays
-
-    for (int i = 0; i < array1.Length; i++)
-    {
-        addedArray[i] = array1[i];
-    }
-    for (int i = array1.Length; i < addedArray.Length; i++)
-    {
-        addedArray[i] = array2[i-array1.Length];
-    }
-    Array.Sort(addedArray);
-    Console.WriteLine("here is the merged array.");
-    foreach (int i in addedArray)
-    {
-        Console.WriteLine(i);
-    }
-    return addedArray;
-}
-Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
-
-//---------------------------------------------------------------------------------------------------------------------
