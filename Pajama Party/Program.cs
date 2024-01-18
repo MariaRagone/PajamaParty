@@ -168,6 +168,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks.Sources;
 using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
 
 string[] greeting = { "Hi", "Hello", "Ciao", "Hola" };
 int[] grades = new int[5]; //there are 5 slots in this array
@@ -1836,30 +1837,58 @@ Console.WriteLine("Write a function to calculate the factorial of a given number
 Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
     "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
 Console.WriteLine("Pig Latin: give me a word");
-string userWord = Console.ReadLine();
-string characters = new string(userWord.ToArray());
-string piggyWord = "";
-string tempString = "";
-string endPart = "";
-for (int i = 0; i <= 1; i++)
-{
+string userWord = Console.ReadLine().ToLower(); // Convert to lowercase for case-insensitivity
+char[] characters = userWord.ToCharArray(); // Convert the string input into characters
+string piggyWord = ""; // The final Pig Latin word
 
-    if (characters[i] == 'a' || characters[i] == 'e' || characters[i] == 'i' || characters[i] == 'o' || characters[i] == 'u')
+if (characters.Length > 0)
+{
+    if (IsVowel(characters[0])) // Check if the first letter is a vowel
     {
-        piggyWord = userWord + "Way";
+        piggyWord = userWord + "way"; // Add "way" to the end of the word
     }
     else
     {
-        char[] temp = new char[characters.Length];
-        for(int j = 0; j < characters.Length; j++)
-            if (characters[i] != 'a' || characters[i] != 'e' || characters[i] != 'i' || characters[i] != 'o' || characters[i] != 'u')
-            {
-                endPart = ; //add in the characters after the constinants
-                temp[i] = characters[i]; //add the character to a new char array
-                tempString = new string(temp.ToArray());//then convert the char array to a string
-            }
+        int firstVowelIndex = Array.FindIndex(characters, IsVowel);
+
+        if (firstVowelIndex != -1)
+        {
+            string beginningPart = userWord.Substring(0, firstVowelIndex);
+            string endPart = userWord.Substring(firstVowelIndex);
+            piggyWord = endPart + beginningPart + "ay";
         }
-        piggyWord = endPart + tempString + "ay"; //all constinats before the first vowel + "ay";
     }
-    Console. WriteLine($"Here is your word in Pig Latin: {piggyWord}");
+}
+
+Console.WriteLine($"Here is your word in Pig Latin: {piggyWord}");
+
+// Function to check if a character is a vowel
+bool IsVowel(char c)
+{
+    return "aeiou".Contains(c);
+}
+
+
+//else
+//{
+//    char[] constinants = new char[characters.Length];//this is the array that holds the constinants before the first vowel
+//    char[] endOfWord = new char[characters.Length];
+//    for(int j = 0; j < characters.Length; j++)//get the characters before the first vowel
+//        if (characters[i] != 'a' || characters[i] != 'e' || characters[i] != 'i' || characters[i] != 'o' || characters[i] != 'u')
+//        {
+//            constinants[i] = characters[i]; //add the character to a new char array
+//            //beginningPart = new string(constinants.ToArray());//then convert the char array to a string
+//        }
+//    for(int k =  0; k < characters.Length; k++)//get the characters after the constinants
+//    {
+//        endOfWord[k] = characters[k]; //add in the characters after the constinants
+//        endPart = new string(endOfWord.ToArray());
+
+//    }
+//}
+////need to subtract the beginningPart from the whole word
+////need to find out how many indexes the beginningPart has, then move it to the end
+//    piggyWord = endPart + constinants[characters.Length] + "ay"; //all constinats before the first vowel + "ay";
+//}
+//Console.WriteLine($"Here is your word in Pig Latin: {piggyWord}");
 
