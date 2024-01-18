@@ -1610,212 +1610,228 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //Console.WriteLine($"Here is your word reversed {reversed}");
 //    return reversed == cleaned; 
 //}
-Console.WriteLine(CalcF(5));
-static int CalcF(int x)
-{
-    int result = 1;
-    for (int i = 1; i <= x; i++)
-    {
-        result *= i;
-    }
-    return result;
-}
-Console.WriteLine(isPals("mom"));
-static bool isPals(string x)
-{
-    string original = x.ToString().ToLower().Trim();
-    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
-    string reversed = new string(cleaned.Reverse().ToArray());
-    return reversed == cleaned;
-}
-Console.WriteLine(CalcFib(0));
-static int CalcFib(int x)
-{
-    if (x <= 1)
-    {
-        return x;
-    }
-    int[] fib = new int[x + 1];
-    fib[0] = 0;
-    fib[1] = 1;
-    for (int i = 2; i <= x; i++)
-    {
-        fib[i] = fib[i - 1] + fib[i - 2];
-    }
-    return fib[x];
-}
+//Console.WriteLine(CalcF(5));
+//static int CalcF(int x)
+//{
+//    int result = 1;
+//    for (int i = 1; i <= x; i++)
+//    {
+//        result *= i;
+//    }
+//    return result;
+//}
+//Console.WriteLine(isPals("mom"));
+//static bool isPals(string x)
+//{
+//    string original = x.ToString().ToLower().Trim();
+//    string cleaned = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    string reversed = new string(cleaned.Reverse().ToArray());
+//    return reversed == cleaned;
+//}
+//Console.WriteLine(CalcFib(0));
+//static int CalcFib(int x)
+//{
+//    if (x <= 1)
+//    {
+//        return x;
+//    }
+//    int[] fib = new int[x + 1];
+//    fib[0] = 0;
+//    fib[1] = 1;
+//    for (int i = 2; i <= x; i++)
+//    {
+//        fib[i] = fib[i - 1] + fib[i - 2];
+//    }
+//    return fib[x];
+//}
 
-string word = "racecars";
-Check(word);
-static void Check(string x)
-{
-    string original = x.ToString().ToLower().Trim();
-    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray());
-    string reversed = new string(cleaned.Reverse().ToArray());
-    if (cleaned == reversed)
-    {
-        Console.WriteLine($"{x} is a palindrome");
-    }
-    else
-    {
-        Console.WriteLine($"{x} is not palindrome");
-    }
-}
-Console.WriteLine("Implement a binary search algorithm to find the index of a given element in a sorted array. If the element is not present, return -1.");
+//string word = "racecars";
+//Check(word);
+//static void Check(string x)
+//{
+//    string original = x.ToString().ToLower().Trim();
+//    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray());
+//    string reversed = new string(cleaned.Reverse().ToArray());
+//    if (cleaned == reversed)
+//    {
+//        Console.WriteLine($"{x} is a palindrome");
+//    }
+//    else
+//    {
+//        Console.WriteLine($"{x} is not palindrome");
+//    }
+//}
+//Console.WriteLine("Implement a binary search algorithm to find the index of a given element in a sorted array. If the element is not present, return -1.");
 
-int element = 9;
-int[] elementList = new int[] { 1, 2, 3, 4, 5, 1, 6, 9, 10 };//prints "7"
-Console.WriteLine(FindIndex(element, elementList));
-static int FindIndex(int element, int[] elementList)
-{
-    int left = 0, right = elementList.Length - 1;
-    while (left <= right)
-    {
-        int mid = (left + right) / 2;
-        if (elementList[mid] == element)
-            return mid; // Element found, return its index
-        else if (elementList[mid] < element)
-            left = mid + 1; // Search in the right half
-        else
-            right = mid - 1; // Search in the left half
-    }
-    return -1; // Element not found
-}
+//int element = 9;
+//int[] elementList = new int[] { 1, 2, 3, 4, 5, 1, 6, 9, 10 };//prints "7"
+//Console.WriteLine(FindIndex(element, elementList));
+//static int FindIndex(int element, int[] elementList)
+//{
+//    int left = 0, right = elementList.Length - 1;
+//    while (left <= right)
+//    {
+//        int mid = (left + right) / 2;
+//        if (elementList[mid] == element)
+//            return mid; // Element found, return its index
+//        else if (elementList[mid] < element)
+//            left = mid + 1; // Search in the right half
+//        else
+//            right = mid - 1; // Search in the left half
+//    }
+//    return -1; // Element not found
+//}
 
-string str = "arrb6???4xxbl5???eee5";
-Console.WriteLine(QuestionsMarks(str));
-static bool QuestionsMarks(string str)
-{
-    char[] characters = str.ToCharArray();
-    int count = 0;
-    int currentSum = 0;
-    for (int i = 0; i < characters.Length; i++)
-    {
-        if (Char.IsDigit(characters[i]))
-        {
-            int num1 = Int32.Parse(characters[i].ToString());
-            for (int j = i + 1; j < characters.Length; j++)
-            {
-                if (Char.IsDigit(characters[j]))
-                {
-                    int num2 = Int32.Parse(characters[j].ToString());
-                    currentSum = num1 + num2;
+//string str = "arrb6???4xxbl5???eee5";
+//Console.WriteLine(QuestionsMarks(str));
+//static bool QuestionsMarks(string str)
+//{
+//    char[] characters = str.ToCharArray();
+//    int count = 0;
+//    int currentSum = 0;
+//    for (int i = 0; i < characters.Length; i++)
+//    {
+//        if (Char.IsDigit(characters[i]))
+//        {
+//            int num1 = Int32.Parse(characters[i].ToString());
+//            for (int j = i + 1; j < characters.Length; j++)
+//            {
+//                if (Char.IsDigit(characters[j]))
+//                {
+//                    int num2 = Int32.Parse(characters[j].ToString());
+//                    currentSum = num1 + num2;
 
-                    if (currentSum == 10)
-                    {
-                        count += 3;
-                        break;
-                    }
-                }
-                else if (characters[j] == '?')
-                {
-                    count++;
-                }
-            }
-        }
-    }
-    return count >= 3;
-}
-//two sum
-//find two indices of numbers that add up to the target number
-int target = 5;
-int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7 }; //should return an array with 0, and 3 in it. 
-int[] twoNumbers = FindTwoSum(numbers1, target);
-Console.WriteLine($"The two indices are {twoNumbers[0]} and {twoNumbers[1]}");
-static int[] FindTwoSum(int[] x, int t)
-{
-    int[] twoNumbers = new int[1];
-    for (int i = 0; i < x.Length; i++)
-    {
-        int index = t - x[i]; // index = 5 -  1(index of i) === 4
-        for (int j = 0; j < x.Length; j++)
-        {
-            if (x[j] == index)
-            {
-                return new int[] { i, j };
-            }
-        }
-    }
-    return new int[] { 0, 0 };
-}
+//                    if (currentSum == 10)
+//                    {
+//                        count += 3;
+//                        break;
+//                    }
+//                }
+//                else if (characters[j] == '?')
+//                {
+//                    count++;
+//                }
+//            }
+//        }
+//    }
+//    return count >= 3;
+//}
+////two sum
+////find two indices of numbers that add up to the target number
+//int target = 5;
+//int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7 }; //should return an array with 0, and 3 in it. 
+//int[] twoNumbers = FindTwoSum(numbers1, target);
+//Console.WriteLine($"The two indices are {twoNumbers[0]} and {twoNumbers[1]}");
+//static int[] FindTwoSum(int[] x, int t)
+//{
+//    int[] twoNumbers = new int[1];
+//    for (int i = 0; i < x.Length; i++)
+//    {
+//        int index = t - x[i]; // index = 5 -  1(index of i) === 4
+//        for (int j = 0; j < x.Length; j++)
+//        {
+//            if (x[j] == index)
+//            {
+//                return new int[] { i, j };
+//            }
+//        }
+//    }
+//    return new int[] { 0, 0 };
+//}
 
-//find two numbers that add up to the target number
-int targetNumber = 5;
-int[] array = new int[] { 1, 2, 3, 4, 5 };
-int[] answer = TwoSum(targetNumber, array);
-Console.WriteLine($"The two Numbers are {answer[0]}, {answer[1]}");
-static int[] TwoSum(int target, int[] array)
-{
-    //make an array to store the numbers
-    int[] twoNumbers = new int[2];
-    for (int i = 0; i < array.Length; i++)//find first number
-    {
-        int firstNumber = target - array[i];
-        for (int j = 0; j < array.Length; j++)//find second number
-        {
-            if (target - firstNumber == array[j])
-            {
-                int secondNumber = array[j];
-                twoNumbers[0] = firstNumber;
-                twoNumbers[1] = secondNumber;
-            }
-        }
-        return twoNumbers; //should return 1, and 4
-    }
-    return new int[] { 0, 0 };
-}
+////find two numbers that add up to the target number
+//int targetNumber = 5;
+//int[] array = new int[] { 1, 2, 3, 4, 5 };
+//int[] answer = TwoSum(targetNumber, array);
+//Console.WriteLine($"The two Numbers are {answer[0]}, {answer[1]}");
+//static int[] TwoSum(int target, int[] array)
+//{
+//    //make an array to store the numbers
+//    int[] twoNumbers = new int[2];
+//    for (int i = 0; i < array.Length; i++)//find first number
+//    {
+//        int firstNumber = target - array[i];
+//        for (int j = 0; j < array.Length; j++)//find second number
+//        {
+//            if (target - firstNumber == array[j])
+//            {
+//                int secondNumber = array[j];
+//                twoNumbers[0] = firstNumber;
+//                twoNumbers[1] = secondNumber;
+//            }
+//        }
+//        return twoNumbers; //should return 1, and 4
+//    }
+//    return new int[] { 0, 0 };
+//}
 
 
-Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
-    int[] array3 = { 1, 2, 2, 4, 2, 2, 3};
-    int[] uniqueElements = FindUniqueElements(array3);
-    Console.WriteLine("Unique Elements:");
+//Console.WriteLine("Write a function to find and return all unique elements in an array. The order of elements in the result does not matter.");
+//    int[] array3 = { 1, 2, 2, 4, 2, 2, 3};
+//    int[] uniqueElements = FindUniqueElements(array3);
+//    Console.WriteLine("Unique Elements:");
+//    foreach (int e in uniqueElements)
+//    {
+//        Console.WriteLine(e);
+//    }
+//static int[] FindUniqueElements(int[] array)
+//{
+//    int uniqueCount = 0;
+//    // Count the number of unique elements
+//    for (int i = 0; i < array.Length; i++)
+//    {        bool isUnique = true;
+//        // Check if the current element is already found before
+//        for (int j = 0; j < i; j++)
+//        {
+//            if (array[i] == array[j])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//        }
+//        if (isUnique)
+//        {
+//            uniqueCount++;
+//        }
+//    }
+//    // Create an array to store unique elements
+//    int[] uniqueElements = new int[uniqueCount];
+//    int currentIndex = 0;
+//    // Fill the array with unique elements
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        bool isUnique = true;
+//        for (int j = 0; j < i; j++)
+//        {
+//            if (array[i] == array[j])
+//            {
+//                isUnique = false;
+//                break;
+//            }
+//        }
+//        if (isUnique)
+//        {
+//            uniqueElements[currentIndex] = array[i];
+//            currentIndex++;
+//        }
+//    }
+//    return uniqueElements;
+//}
+Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
+string original = "mom";
 
-    foreach (int e in uniqueElements)
-    {
-        Console.WriteLine(e);
-    }
-static int[] FindUniqueElements(int[] array)
-{
-    int uniqueCount = 0;
-    // Count the number of unique elements
-    for (int i = 0; i < array.Length; i++)
-    {        bool isUnique = true;
-        // Check if the current element is already found before
-        for (int j = 0; j < i; j++)
-        {
-            if (array[i] == array[j])
-            {
-                isUnique = false;
-                break;
-            }
-        }
-        if (isUnique)
-        {
-            uniqueCount++;
-        }
-    }
-    // Create an array to store unique elements
-    int[] uniqueElements = new int[uniqueCount];
-    int currentIndex = 0;
-    // Fill the array with unique elements
-    for (int i = 0; i < array.Length; i++)
-    {
-        bool isUnique = true;
-        for (int j = 0; j < i; j++)
-        {
-            if (array[i] == array[j])
-            {
-                isUnique = false;
-                break;
-            }
-        }
-        if (isUnique)
-        {
-            uniqueElements[currentIndex] = array[i];
-            currentIndex++;
-        }
-    }
-    return uniqueElements;
-}
 
+
+Console.WriteLine("Determine if a given string is a palindrome (reads the same backward as forward).\r\n\r\n");
+
+Console.WriteLine(" Merge two sorted arrays into a single sorted array.");
+Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
+Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
+Console.WriteLine("Write a function to calculate the factorial of a given number.");
+//static int CalcFactorial(int x )
+//{
+
+//}
+
+Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
+    "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
