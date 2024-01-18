@@ -1835,3 +1835,31 @@ Console.WriteLine("Write a function to calculate the factorial of a given number
 
 Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
     "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
+Console.WriteLine("Pig Latin: give me a word");
+string userWord = Console.ReadLine();
+string characters = new string(userWord.ToArray());
+string piggyWord = "";
+string tempString = "";
+string endPart = "";
+for (int i = 0; i <= 1; i++)
+{
+
+    if (characters[i] == 'a' || characters[i] == 'e' || characters[i] == 'i' || characters[i] == 'o' || characters[i] == 'u')
+    {
+        piggyWord = userWord + "Way";
+    }
+    else
+    {
+        char[] temp = new char[characters.Length];
+        for(int j = 0; j < characters.Length; j++)
+            if (characters[i] != 'a' || characters[i] != 'e' || characters[i] != 'i' || characters[i] != 'o' || characters[i] != 'u')
+            {
+                endPart = ; //add in the characters after the constinants
+                temp[i] = characters[i]; //add the character to a new char array
+                tempString = new string(temp.ToArray());//then convert the char array to a string
+            }
+        }
+        piggyWord = endPart + tempString + "ay"; //all constinats before the first vowel + "ay";
+    }
+    Console. WriteLine($"Here is your word in Pig Latin: {piggyWord}");
+
