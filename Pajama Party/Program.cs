@@ -169,6 +169,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks.Sources;
 using System.Runtime.CompilerServices;
 using Microsoft.VisualBasic;
+using System.Text;
 
 string[] greeting = { "Hi", "Hello", "Ciao", "Hola" };
 int[] grades = new int[5]; //there are 5 slots in this array
@@ -1819,7 +1820,6 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //    return uniqueElements;
 //}
 Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
-string original = "mom";
 
 
 
@@ -1867,42 +1867,168 @@ Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz
 //}
 
 
-int userInteger = -1;
-Console.WriteLine("Enter an integer from 1 - 100.");
-try
-{
-    userInteger = int.Parse(Console.ReadLine());
-}
-catch (FormatException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-if (userInteger >= 1 && userInteger <= 100)
-{
-    if (userInteger % 2 != 0 && userInteger < 60)
-    {
-        Console.WriteLine($"{userInteger} is odd and less than 60");
-    }
+//int userInteger = -1;
+//Console.WriteLine("Enter an integer from 1 - 100.");
+//try
+//{
+//    userInteger = int.Parse(Console.ReadLine());
+//}
+//catch (FormatException ex)
+//{
+//    Console.WriteLine($"Error: {ex.Message}");
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine($"Error: {ex.Message}");
+//}
+//if (userInteger >= 1 && userInteger <= 100)
+//{
+//    if (userInteger % 2 != 0 && userInteger < 60)
+//    {
+//        Console.WriteLine($"{userInteger} is odd and less than 60");
+//    }
 
-    else if (userInteger % 2 == 0 && userInteger >=2 && userInteger <=25)
+//    else if (userInteger % 2 == 0 && userInteger >=2 && userInteger <=25)
+//    {
+//        Console.WriteLine($"{userInteger} is even and less than 25");
+//    }
+//    else if (userInteger % 2 == 0 && userInteger >= 26 && userInteger <= 60)
+//    {
+//        Console.WriteLine($"{userInteger} is even and betwen 26 and 60");
+//    }
+//    else if (userInteger % 2 == 0 && userInteger > 60)
+//    {
+//        Console.WriteLine($"{userInteger} is even and greater than 60");
+//    }
+//    else if (userInteger % 2 != 0 && userInteger > 60)
+//    {
+//        Console.WriteLine($"{userInteger} is odd and greater than 60");
+//    }
+//}
+//    else { Console.WriteLine("Invalid input"); }
+
+//do
+//{
+//    Console.WriteLine("Hello World!");
+//    Console.WriteLine("Do you want to continue?");
+//}
+//while (Console.ReadLine().ToLower() == "y");
+
+//    Console.WriteLine("Bye!");
+//bool keepGoing = true;
+//do
+//{
+//    Console.WriteLine("Give me a word to check to see if it is a palindrom.");
+//    string userWord = Console.ReadLine();
+//    keepGoing = true;
+//    Console.WriteLine($"The word {userWord} is a palindrome: {CheckForP(userWord)}");
+//    Console.WriteLine("Try again? y/n");
+//    if (Console.ReadLine() == "y")
+//    {
+//        keepGoing &= true;
+//    }
+//    else
+//    { keepGoing &= false; }
+//}
+//while (keepGoing = true);
+//    Console.WriteLine("bye!");
+//static bool CheckForP(string palindrome)
+//{
+//    string original = palindrome.ToString().ToLower().Trim();
+//    string clean = new string(original.Where(Char.IsLetterOrDigit).ToArray());
+//    string reversed = new string(clean.Reverse().ToArray());
+//    return clean == reversed; 
+//}
+
+//Console.WriteLine("Enter a language. ");
+//string language = Console.ReadLine().ToLower().Trim();
+
+//switch(language)
+//{
+//    case "english":
+//        Console.WriteLine("Hello"); break;
+//    case "italian":
+//        Console.WriteLine("Ciao"); break;
+//    case "spanish":
+//        Console.WriteLine("buenos dias"); break;
+//    case "german":
+//        Console.WriteLine("guten morgan"); break;
+//    default:
+//        Console.WriteLine("Non valid0");
+//        break;
+
+//}
+//Console.WriteLine("Enter a number");
+//double userNumber = double.Parse(Console.ReadLine());
+//for (int i = 0; i < userNumber; i++)
+//{
+//    double power = Math.Pow(i+1, 3);
+//    Console.Write($"{power}, ");
+
+//}
+Console.WriteLine("Use a for loop to output a triangle of asterisks with a height of ten.\r\n");
+
+for (int i = 0; i <= 10; i++)
+{
+
+    for (int j = 1; j <= i; j++)
     {
-        Console.WriteLine($"{userInteger} is even and less than 25");
+        Console.Write("* ");
     }
-    else if (userInteger % 2 == 0 && userInteger >= 26 && userInteger <= 60)
+    Console.WriteLine();
+}
+for (int i = 1; i <= 10; i++)
+{
+    // Print spaces
+    for (int j = 1; j <= 10 - i; j++)
     {
-        Console.WriteLine($"{userInteger} is even and betwen 26 and 60");
+        Console.Write(" ");
     }
-    else if (userInteger % 2 == 0 && userInteger > 60)
+    // Print asterisks
+    for (int k = 1; k <= i; k++)
     {
-        Console.WriteLine($"{userInteger} is even and greater than 60");
+        Console.Write("* ");
     }
-    else if (userInteger % 2 != 0 && userInteger > 60)
+    Console.WriteLine(); // Move to the next line after completing a row
+}
+int num1 = 3;
+int num2 = 5;
+int sum5 = 0; 
+for (int i = num1; i <= num2; i++)
+{
+    sum5+= i; 
+}
+Console.WriteLine(sum5);
+Console.WriteLine("Remove all the vowels in the middle of the word, but leave any that start or end the word.\r\n");
+string userInput = "Elephants are wonderful";
+char[] characters = userInput.ToCharArray(); // Convert the string input into characters
+StringBuilder newPhrase = new StringBuilder();
+for (int i = 1; i <= characters.Length-1; i++)//starts and 2nd letter and ends at 2nd to last letter
+{
+
+    if (!IsVowel(characters[i]))
     {
-        Console.WriteLine($"{userInteger} is odd and greater than 60");
+        newPhrase.Append(characters[i]);
     }
 }
-    else { Console.WriteLine("Invalid input"); }
+string output = newPhrase.ToString();
+Console.WriteLine(output);
+
+static bool IsVowel(char c)
+{
+    return "aeiou".Contains(c);
+}
+
+Groceries item1 = new Groceries("Oranges", 10, 4.99);
+Groceries item2 = new Groceries("Lettuce", 10, 1.99);
+Groceries item3 = new Groceries("Eggs", 1, 2.50);
+Groceries item4 = new Groceries("Crackers", 5, 3.49);
+
+List<Groceries> groceryList = new List<Groceries> { item1, item2, item3, item4 };
+
+groceryList.Add(new Groceries("Cheese", 3, 8.00));
+
+foreach (Groceries item in groceryList)
+{
+    Console.WriteLine(item); 
+}
