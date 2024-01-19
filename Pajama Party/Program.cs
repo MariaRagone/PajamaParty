@@ -1819,23 +1819,6 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //    }
 //    return uniqueElements;
 //}
-Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
-
-
-
-Console.WriteLine("Determine if a given string is a palindrome (reads the same backward as forward).\r\n\r\n");
-
-Console.WriteLine(" Merge two sorted arrays into a single sorted array.");
-Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
-Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
-Console.WriteLine("Write a function to calculate the factorial of a given number.");
-//static int CalcFactorial(int x )
-//{
-
-//}
-
-Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
-    "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
 //Console.WriteLine("Pig Latin: give me a word");
 //string userWord = Console.ReadLine().ToLower(); // Convert to lowercase for case-insensitivity
 //char[] characters = userWord.ToCharArray(); // Convert the string input into characters
@@ -1966,69 +1949,191 @@ Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz
 //    Console.Write($"{power}, ");
 
 //}
-Console.WriteLine("Use a for loop to output a triangle of asterisks with a height of ten.\r\n");
+//Console.WriteLine("Use a for loop to output a triangle of asterisks with a height of ten.\r\n");
 
-for (int i = 0; i <= 10; i++)
+//for (int i = 0; i <= 10; i++)
+//{
+
+//    for (int j = 1; j <= i; j++)
+//    {
+//        Console.Write("* ");
+//    }
+//    Console.WriteLine();
+//}
+//for (int i = 1; i <= 10; i++)
+//{
+//    // Print spaces
+//    for (int j = 1; j <= 10 - i; j++)
+//    {
+//        Console.Write(" ");
+//    }
+//    // Print asterisks
+//    for (int k = 1; k <= i; k++)
+//    {
+//        Console.Write("* ");
+//    }
+//    Console.WriteLine(); // Move to the next line after completing a row
+//}
+//int num1 = 3;
+//int num2 = 5;
+//int sum5 = 0; 
+//for (int i = num1; i <= num2; i++)
+//{
+//    sum5+= i; 
+//}
+//Console.WriteLine(sum5);
+//Console.WriteLine("Remove all the vowels in the middle of the word, but leave any that start or end the word.\r\n");
+//string userInput = "Elephants are wonderful";
+//char[] characters = userInput.ToCharArray(); // Convert the string input into characters
+//StringBuilder newPhrase = new StringBuilder();
+//for (int i = 1; i <= characters.Length-1; i++)//starts and 2nd letter and ends at 2nd to last letter
+//{
+
+//    if (!IsVowel(characters[i]))
+//    {
+//        newPhrase.Append(characters[i]);
+//    }
+//}
+//string output = newPhrase.ToString();
+//Console.WriteLine(output);
+
+//static bool IsVowel(char c)
+//{
+//    return "aeiou".Contains(c);
+//}
+
+//Groceries item1 = new Groceries("Oranges", 10, 4.99);
+//Groceries item2 = new Groceries("Lettuce", 10, 1.99);
+//Groceries item3 = new Groceries("Eggs", 1, 2.50);
+//Groceries item4 = new Groceries("Crackers", 5, 3.49);
+
+//List<Groceries> groceryList = new List<Groceries> { item1, item2, item3, item4 };
+
+//groceryList.Add(new Groceries("Cheese", 3, 8.00));
+
+//foreach (Groceries item in groceryList)
+//{
+//    Console.WriteLine(item); 
+//}
+
+Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
+
+
+
+Console.WriteLine("Determine if a given string is a palindrome (reads the same backward as forward).\r\n\r\n");
+
+Console.WriteLine(" Merge two sorted arrays into a single sorted array.");
+Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
+Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
+Console.WriteLine("Write a function to calculate the factorial of a given number.");
+//static int CalcFactorial(int x )
+//{
+
+//}
+
+Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
+    "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
+
+//Console.WriteLine("Create an array of size 5 and fill it with the following numbers: 16, 32, 64, 128, 256. Prompt the user to enter a command, 'half' or 'double'.  If the user enters 'half', half all the elements in the array.  If the user enters 'double', double all the elements in the array.\r\n");
+//int[] array5 = new int[] { 16, 32, 64, 128, 256 };
+//Console.WriteLine("Half or Double?");
+//string userChoice = Console.ReadLine().ToLower().Trim();
+//if (userChoice == "half")
+//{
+//    foreach (int i in array5)
+//    {
+//        int quotiant = i / 2;
+//        Console.WriteLine(quotiant);
+
+//    }
+//}
+//else if (userChoice == "double")
+//{
+//    foreach (int i in array5)
+//    {
+//        int product = i * 2;
+//        Console.WriteLine(product);
+//    }
+//}
+//else
+//{
+//    Console.WriteLine("Invalid response.");
+//}
+//Console.WriteLine("Create an array of size 5 and fill it with the following strings: \"cow\", \"elephant\", \"jaguar\", \"horse\", \"crow\". " +
+//    "Prompt the user to enter two indices separated by a space.  The first index will specify the word, and the second will specify a letter in that word.  " +
+//    "Display the corresponding word and letter.\r\n");
+//string[] animals = new string[] { "cow", "elephant", "jaguar", "horse", "crow" };
+//Console.WriteLine("Enter two indices:");
+//string input = (Console.ReadLine());
+//string[] indicies = input.Split(' ');
+//int first = int.Parse(indicies[0]);
+//int second = int.Parse(indicies[1]);
+//char[] letters = animals[first].ToCharArray();
+//char selectedLetter = letters[first];
+//Console.WriteLine($"{animals[first]}, {selectedLetter}");
+//Console.WriteLine("Create two arrays, each of size 5. Fill the first array with the numbers: 12, 11, 10, 9, 8. Fill the second array with the strings: " +
+//    "\"Drummers Drumming\", \"Pipers Piping\", \"Lords a-Leaping\", \"Ladies Dancing\", \"Maids a-Milking\". Combine both arrays to display a piece of the holiday song.");
+//int[] songNumbers = new int[] { 12, 11, 10, 9, 8 };
+//string[] songWords = new string[] { "Drummers Drumming", "Pipers Piping", "Lords a-Leaping", "Ladies Dancing", "Maids a-Milking" };
+
+//for (int i = 0; i < songNumbers.Length; i++)
+//{
+//    Console.WriteLine($"{songNumbers[i]} {songWords[i]}");
+
+//}
+//Console.WriteLine("Prompt the user to enter five numbers.  Store these numbers in an array and output them in ascending order.");
+//Console.WriteLine("Enter five numbers:");
+//string input = (Console.ReadLine());
+//string []fiveNUmbers = input.Split(' ');
+//int summed = 0;
+//    for (int i = 0; i < fiveNUmbers.Length; i++)
+//{
+//    //take the instance and add it to the next instance
+//    int parsed = int.Parse(fiveNUmbers[i]);
+//Console.WriteLine(fiveNUmbers[i].OrderBy(num => num).ToArray());
+//}
+
+//string inputs= Console.ReadLine();
+
+//    //In C# create 2 methods: "Ping" and "Pong". Model out these methods as described
+//    //below: Ping requirements: -accepts a single integer argument that is named i, -
+//    //ping will add 1 to the value i, and then call pong passing the new value as an
+//    //argument.Pong Requirements: -accepts a single integer argument that is named
+//    //i, - pong will add 10 to the value of i, and then write out the new value to the
+//    //console. - Pong will then call ping passing the new value as an argument.This
+//    //will continue until the integer value is greater than 500, at which point Ping
+//    //Pong will stop. No number is greater than 500 is written to the console. Output
+//    //your results by calling Ping(0) within the Main method (this step is completed
+//    //for you).
+//    class Solution
+
+int c = 0;  
+
+     Ping(0);
+    
+
+static int Ping(int c)
 {
-
-    for (int j = 1; j <= i; j++)
+    if (c <= 500)
     {
-        Console.Write("* ");
+
+    c++;
+    Pong(c);
     }
-    Console.WriteLine();
+    return c;
 }
-for (int i = 1; i <= 10; i++)
+static int Pong(int c)
 {
-    // Print spaces
-    for (int j = 1; j <= 10 - i; j++)
+    if (c <=500)
     {
-        Console.Write(" ");
+
+    c+= 10;
+        if (c<=500)
+        {
+    Console.WriteLine($"The new value is: {c}");
+
+        }
+    Ping(c);
     }
-    // Print asterisks
-    for (int k = 1; k <= i; k++)
-    {
-        Console.Write("* ");
-    }
-    Console.WriteLine(); // Move to the next line after completing a row
-}
-int num1 = 3;
-int num2 = 5;
-int sum5 = 0; 
-for (int i = num1; i <= num2; i++)
-{
-    sum5+= i; 
-}
-Console.WriteLine(sum5);
-Console.WriteLine("Remove all the vowels in the middle of the word, but leave any that start or end the word.\r\n");
-string userInput = "Elephants are wonderful";
-char[] characters = userInput.ToCharArray(); // Convert the string input into characters
-StringBuilder newPhrase = new StringBuilder();
-for (int i = 1; i <= characters.Length-1; i++)//starts and 2nd letter and ends at 2nd to last letter
-{
-
-    if (!IsVowel(characters[i]))
-    {
-        newPhrase.Append(characters[i]);
-    }
-}
-string output = newPhrase.ToString();
-Console.WriteLine(output);
-
-static bool IsVowel(char c)
-{
-    return "aeiou".Contains(c);
-}
-
-Groceries item1 = new Groceries("Oranges", 10, 4.99);
-Groceries item2 = new Groceries("Lettuce", 10, 1.99);
-Groceries item3 = new Groceries("Eggs", 1, 2.50);
-Groceries item4 = new Groceries("Crackers", 5, 3.49);
-
-List<Groceries> groceryList = new List<Groceries> { item1, item2, item3, item4 };
-
-groceryList.Add(new Groceries("Cheese", 3, 8.00));
-
-foreach (Groceries item in groceryList)
-{
-    Console.WriteLine(item); 
+    return c;
 }
