@@ -170,6 +170,7 @@ using System.Threading.Tasks.Sources;
 using System.Runtime.CompilerServices;
 using Microsoft.VisualBasic;
 using System.Text;
+using System.Collections.Immutable;
 
 string[] greeting = { "Hi", "Hello", "Ciao", "Hola" };
 int[] grades = new int[5]; //there are 5 slots in this array
@@ -2016,23 +2017,6 @@ Console.WriteLine("Classes:\r\n\r\nDefine a class named Person with properties N
 //    Console.WriteLine(item); 
 //}
 
-Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
-
-
-
-Console.WriteLine("Determine if a given string is a palindrome (reads the same backward as forward).\r\n\r\n");
-
-Console.WriteLine(" Merge two sorted arrays into a single sorted array.");
-Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
-Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
-Console.WriteLine("Write a function to calculate the factorial of a given number.");
-//static int CalcFactorial(int x )
-//{
-
-//}
-
-Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
-    "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
 
 //Console.WriteLine("Create an array of size 5 and fill it with the following numbers: 16, 32, 64, 128, 256. Prompt the user to enter a command, 'half' or 'double'.  If the user enters 'half', half all the elements in the array.  If the user enters 'double', double all the elements in the array.\r\n");
 //int[] array5 = new int[] { 16, 32, 64, 128, 256 };
@@ -2107,33 +2091,98 @@ Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz
 //    //for you).
 //    class Solution
 
-int c = 0;  
+//int c = 0;  
 
-     Ping(0);
-    
+//     Ping(0);
 
-static int Ping(int c)
+
+//static int Ping(int c)
+//{
+//    if (c <= 500)
+//    {
+
+//    c++;
+//    Pong(c);
+//    }
+//    return c;
+//}
+//static int Pong(int c)
+//{
+//    if (c <=500)
+//    {
+
+//    c+= 10;
+//        if (c<=500)
+//        {
+//    Console.WriteLine($"The new value is: {c}");
+
+//        }
+//    Ping(c);
+//    }
+//    return c;
+//}
+
+Console.WriteLine("Determine if a given string is a palindrome (reads the same backward as forward).\r\n\r\n");
+
+Console.WriteLine(" Merge two sorted arrays into a single sorted array.");
+
+int[] notSorted = { 1, 2, 5, 4, 8, 9 };
+int[] notSorted2 = { 1, 5, 6, 2, 4, 1 };
+mergeArrays(notSorted, notSorted2);
+
+static int[] mergeArrays(int[] a1, int[] a2)
 {
-    if (c <= 500)
+    int[] merged = new int[a1.Length + a2.Length];
+    for (int i = 0; i < a1.Length; i++)
     {
-
-    c++;
-    Pong(c);
+        merged[i]=a1[i];
     }
-    return c;
+    for (int j = 0; j < a2.Length; j++)
+    {
+        merged[merged.Length - 1 - j]=a2[j] ;
+    }
+    Array.Sort(merged);
+    foreach (int m in merged)
+    {
+        Console.WriteLine(m);
+    }
+    return merged;
 }
-static int Pong(int c)
+
+Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
+Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
+Console.WriteLine("Write a function to calculate the factorial of a given number.");
+//static int CalcFactorial(int x )
+//{
+
+//}
+
+Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
+    "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
+Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
+
+string original = "hello";
+Console.WriteLine(ReverseString(original));
+static char[] ReverseString(string original)
 {
-    if (c <=500)
+    char[] reversed = new char[original.Length];
+    for (int i = 0; i < original.Length; i++)
     {
-
-    c+= 10;
-        if (c<=500)
-        {
-    Console.WriteLine($"The new value is: {c}");
-
-        }
-    Ping(c);
+        reversed[i] = original[original.Length - 1- i];
     }
-    return c;
+        return reversed;
 }
+
+Console.WriteLine("Prompt the user to enter five numbers.  Store these numbers in an array and output them in ascending order..");
+
+//Console.WriteLine("enter 5 numbers");
+//string userNumeros = Console.ReadLine();
+//string[] numeros = int.Parse(userNumeros.Split(' '));
+//for (int i = 0; i<numeros.Length; i++)
+//{
+//    int parsed = int.Parse(numeros[i]);
+//    int[] newParsed = parsed.ToArray();
+//    Array.Sort(newParsed);
+//    Console.WriteLine(newParsed[i]);
+//}
+
