@@ -2135,11 +2135,11 @@ static int[] mergeArrays(int[] a1, int[] a2)
     int[] merged = new int[a1.Length + a2.Length];
     for (int i = 0; i < a1.Length; i++)
     {
-        merged[i]=a1[i];
+        merged[i] = a1[i];
     }
     for (int j = 0; j < a2.Length; j++)
     {
-        merged[merged.Length - 1 - j]=a2[j] ;
+        merged[merged.Length - 1 - j] = a2[j];
     }
     Array.Sort(merged);
     foreach (int m in merged)
@@ -2149,9 +2149,7 @@ static int[] mergeArrays(int[] a1, int[] a2)
     return merged;
 }
 
-Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
 Console.WriteLine("Given a string containing parentheses, curly braces, and square brackets, check if they are balanced.");
-Console.WriteLine("Write a function to calculate the factorial of a given number.");
 //static int CalcFactorial(int x )
 //{
 
@@ -2159,7 +2157,6 @@ Console.WriteLine("Write a function to calculate the factorial of a given number
 
 Console.WriteLine("Print numbers from 1 to 100. For multiples of 3, print \"Fizz\"; " +
     "for multiples of 5, print \"Buzz\"; for multiples of both 3 and 5, print \"FizzBuzz\".");
-Console.WriteLine("Reverse a given string without using built-in functions.\r\n\r\n");
 
 string original = "hello";
 Console.WriteLine(ReverseString(original));
@@ -2168,9 +2165,9 @@ static char[] ReverseString(string original)
     char[] reversed = new char[original.Length];
     for (int i = 0; i < original.Length; i++)
     {
-        reversed[i] = original[original.Length - 1- i];
+        reversed[i] = original[original.Length - 1 - i];
     }
-        return reversed;
+    return reversed;
 }
 
 Console.WriteLine("Prompt the user to enter five numbers.  Store these numbers in an array and output them in ascending order..");
@@ -2186,3 +2183,70 @@ Console.WriteLine("Prompt the user to enter five numbers.  Store these numbers i
 //    Console.WriteLine(newParsed[i]);
 //}
 
+Console.WriteLine(" Write a function that counts the occurrences of each character in a given string.");
+Console.WriteLine(CountCharacters("Hello There!", 'h'));
+static int CountCharacters(string x, char character)
+{
+    string cleaned = new string(x.Where(Char.IsLetterOrDigit).ToArray());
+    int occurences = 0;
+    for (int i = 0; i < cleaned.Length; i++)
+    {
+        if (character == cleaned[i])
+        {
+            occurences++;
+        }
+    }
+    return occurences;
+}
+Console.WriteLine("Write a function to calculate the factorial of a given number.");
+
+Console.WriteLine(CalculateFactorial(5));
+static int CalculateFactorial(int x)
+{
+    int result = 1;
+    for (int i = 1; i <= x; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+
+Console.WriteLine(CalcFib(6));
+static int CalcFib(int x)
+{
+    if (x < 1)
+    {
+        return x;
+    }
+    int[] fib = new int[x + 1];
+    fib[0] = 0;
+    fib[1] = 1;
+    for (int i = 2; i <= x; i++)
+    {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib[x];
+
+}
+
+//write a method for returning a string
+string dressCode = ""; 
+DressCode(dressCode);
+
+static string DressCode(string dressCode)
+{
+    Console.WriteLine("What is your dress Code: casual, business casual, business, or dressy?");
+
+    dressCode = Console.ReadLine().Trim().ToLower();
+    if (dressCode == "business" || dressCode == "b")
+    {
+        dressCode = "business";
+        return dressCode;
+    }
+    else
+    {
+        return "Please choose casual, business casual, business, or dressy";
+    }
+}
+
+Console.WriteLine(dressCode);
