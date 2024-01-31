@@ -2230,23 +2230,88 @@ static int CalcFib(int x)
 }
 
 //write a method for returning a string
-string dressCode = ""; 
-DressCode(dressCode);
+//string dressCode = DressCode();
+//Console.WriteLine($"You said your dress code is {dressCode}");
 
-static string DressCode(string dressCode)
+//static string DressCode()
+//{
+//string dressCode = ""; 
+//    Console.WriteLine("What is your dress Code: casual, business casual, business, or dressy?");
+
+//    dressCode = Console.ReadLine().Trim().ToLower();
+//    if (dressCode == "business" || dressCode == "b")
+//    {
+//        dressCode = "business";
+//        return dressCode;
+//    }
+//    else
+//    {
+//        return "Please choose casual, business casual, business, or dressy";
+//    }
+//}
+
+////wear this code from the getoutfit method-----------------------------------------------
+
+//topForOutfit = new Top(randomT.Color, randomT.HasPattern, randomT.Category, randomT.SleeveLength, randomT.Fit, randomT.Length, randomT.Type);
+
+//Bottom randomB = BottomsList.Where(x => x.Category == "business").ElementAt(random.Next(BottomsList.Count));
+//string hasPatternB = randomB.HasPattern ? "Patterned" : "Plain";
+//bottomForOutfit = new Bottom(randomB.Color, randomB.HasPattern, randomB.Category, randomB.Fit, randomB.Length, randomB.Type);
+//}
+//    else if (dressCode == "business casual")
+//{
+//    //Get a random top that is business casual
+//    Top randomT = TopsList.Where(x => x.Category == "business casual").ElementAt(random.Next(TopsList.Count));
+//    string hasPatternT = randomT.HasPattern ? "Yes" : "No";
+//    topForOutfit = new Top(randomT.Color, randomT.HasPattern, randomT.Category, randomT.SleeveLength, randomT.Fit, randomT.Length, randomT.Type);
+
+//    //Get a random bottom that is business casual
+//    Bottom randomB = BottomsList.Where(x => x.Category == "business casual").ElementAt(random.Next(BottomsList.Count));
+//    string hasPatternB = randomB.HasPattern ? "Yes" : "No";
+//    bottomForOutfit = new Bottom(randomB.Color, randomB.HasPattern, randomB.Category, randomB.Fit, randomB.Length, randomB.Type);
+//}
+//else if (dressCode == "casual")
+//{
+//    //Get a random top that is  casual
+//    Top randomT = TopsList.Where(x => x.Category == "casual").ElementAt(random.Next(TopsList.Count));
+//    string hasPatternT = randomT.HasPattern ? "Yes" : "No";
+//    topForOutfit = new Top(randomT.Color, randomT.HasPattern, randomT.Category, randomT.SleeveLength, randomT.Fit, randomT.Length, randomT.Type);
+
+//    //Get a random bottom that is casual
+//    Bottom randomB = BottomsList.Where(x => x.Category == "casual").ElementAt(random.Next(BottomsList.Count));
+//    string hasPatternB = randomB.HasPattern ? "Yes" : "No";
+//    bottomForOutfit = new Bottom(randomB.Color, randomB.HasPattern, randomB.Category, randomB.Fit, randomB.Length, randomB.Type);
+//}
+//else if (dressCode == "dressy")
+//{
+//    //Get a random top that is dressy
+//    Top randomT = TopsList.Where(x => x.Category == "dressy").ElementAt(random.Next(TopsList.Count));
+//    string hasPatternT = randomT.HasPattern ? "Yes" : "No";
+//    topForOutfit = new Top(randomT.Color, randomT.HasPattern, randomT.Category, randomT.SleeveLength, randomT.Fit, randomT.Length, randomT.Type);
+
+//    //Get a random bottom that is dressy
+//    Bottom randomB = BottomsList.Where(x => x.Category == "dressy").ElementAt(random.Next(BottomsList.Count));
+//    string hasPatternB = randomB.HasPattern ? "Yes" : "No";
+//    bottomForOutfit = new Bottom(randomB.Color, randomB.HasPattern, randomB.Category, randomB.Fit, randomB.Length, randomB.Type);
+//}
+////else
+////{
+////    Console.WriteLine($"There are no tops that match your job's {dressCode} dress code.");
+////}
+
+Console.WriteLine(Check("mooms"));
+static bool Check(string p)
 {
-    Console.WriteLine("What is your dress Code: casual, business casual, business, or dressy?");
-
-    dressCode = Console.ReadLine().Trim().ToLower();
-    if (dressCode == "business" || dressCode == "b")
+    string original = new string(p.ToLower());
+    string clean = new string(original.Where(char.IsLetterOrDigit).ToArray());
+    string [] reverse = new string[clean.Length];
+    for (int i = 0; i<clean.Length/2; i ++)
     {
-        dressCode = "business";
-        return dressCode;
+        if(clean[clean.Length-1-i] == clean[i])
+        {
+            return true; 
+        }
     }
-    else
-    {
-        return "Please choose casual, business casual, business, or dressy";
-    }
+    return false;
 }
 
-Console.WriteLine(dressCode);
